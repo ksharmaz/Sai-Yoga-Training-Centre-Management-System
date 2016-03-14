@@ -26,26 +26,30 @@ namespace SaiYogaTraining.View
             {
                 SaiYogaDBDataContext dbcontext = new SaiYogaDBDataContext();
                 var LoginQuery = (from login in dbcontext.Logins
-                                  where login.userid.Equals(usrtxt.Text) && login.passwd.Equals(passwdtxt.Text) && login.ltype.Equals(GetRadioName())
+                                  where login.userid.Equals(usrtxt.Text) && login.passwd.Equals(passwdtxt.Text)
                                   select login).FirstOrDefault();
 
-                if (LoginQuery.ltype.Equals("administrator"))
+                if(LoginQuery != null)
                 {
-                    this.Close();
-                    th = new Thread(OpenAdminForm);
-                    th.SetApartmentState(ApartmentState.STA);
-                    th.Start();
-                }
-                else if (LoginQuery.ltype.Equals("employees"))
-                {
-                    //this.Close();
-                    //th = new Thread(OpenEmployForm);
-                    //th.SetApartmentState(ApartmentState.STA);
-                    //th.Start();
+                    //if (LoginQuery.ltype.Equals("administrator"))
+                    //{
+                    //    this.Close();
+                    //    th = new Thread(OpenAdminForm);
+                    //    th.SetApartmentState(ApartmentState.STA);
+                    //    th.Start();
+                    //}
+                    //else if (LoginQuery.ltype.Equals("employee"))
+                    //{
+                    //    //this.Close();
+                    //    //th = new Thread(OpenEmployForm);
+                    //    //th.SetApartmentState(ApartmentState.STA);
+                    //    //th.Start();
+                    //}
+                    MessageBox.Show("TODO");
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login/Password or Login Type");
+                    MessageBox.Show("Invalid Login/Password or Login Type", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception exp)
@@ -62,6 +66,11 @@ namespace SaiYogaTraining.View
         private string GetRadioName()
         {
             return typegrp.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("TODO: Show Change Password Form");
         }
     }
 }

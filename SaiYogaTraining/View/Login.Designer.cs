@@ -98,7 +98,7 @@
             this.passwdlbl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwdlbl.Location = new System.Drawing.Point(175, 201);
             this.passwdlbl.Name = "passwdlbl";
-            this.passwdlbl.Size = new System.Drawing.Size(100, 30);
+            this.passwdlbl.Size = new System.Drawing.Size(99, 30);
             this.passwdlbl.TabIndex = 3;
             this.passwdlbl.Text = "Password";
             // 
@@ -177,10 +177,11 @@
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.linkLabel1.Location = new System.Drawing.Point(720, 393);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(166, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(165, 25);
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password ?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Login
             // 

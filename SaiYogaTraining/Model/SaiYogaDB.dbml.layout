@@ -1,108 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 15.375" name="SaiYogaDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 15.375" name="SaiYogaDB">
   <DataContextMoniker Name="/SaiYogaDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="428df454-c6bb-4f38-8380-12471edfb1c2" absoluteBounds="6.25, 10.625, 2, 1.5785953776041666">
+    <classShape Id="bf026e96-6e8d-4a8a-b9c3-f9cfa3d252fa" absoluteBounds="6.25, 10.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Attendance" />
       <nestedChildShapes>
-        <elementListCompartment Id="443a93ec-a388-4ad3-bc0f-fa66f5aab156" absoluteBounds="6.265, 11.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2c641dda-3e33-4e96-9802-ac4bce539230" absoluteBounds="6.265, 11.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f88dbf63-3ae3-40a8-bd46-33b47bafbc0a" absoluteBounds="3.5, 11.75, 2, 2.1554996744791666">
+    <classShape Id="4af3b824-7bf7-4475-9277-5db28d5098d6" absoluteBounds="3.5, 11.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Trainee" />
       <nestedChildShapes>
-        <elementListCompartment Id="557e7e23-84a3-4c10-9217-1866d5ea3558" absoluteBounds="3.515, 12.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="753c4d74-74e1-4084-b0c6-475303196d22" absoluteBounds="3.515, 12.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5e5d6f77-699b-4603-9af2-499223020f11" absoluteBounds="0.75, 0.75, 2, 1.9631982421875005">
+    <classShape Id="84bbd82f-07de-48c7-909f-1ab3e99bb627" absoluteBounds="0.75, 0.75, 2, 1.9631982421875005">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Course" />
       <nestedChildShapes>
-        <elementListCompartment Id="9bd418c4-eab2-4de8-90cc-138fae3b48a2" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d4fa5302-a4de-4c25-9b2d-cf7484c12ff6" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4a74571d-9778-4a62-b4b9-ecad2fc37259" absoluteBounds="6.75, 0.75, 2, 1.5785953776041668">
+    <classShape Id="a92ef1c5-80f8-4fe4-af4e-aaeca52039c3" absoluteBounds="6.75, 1.875, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/SaiYogaDBDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54bf1440-9a51-480d-8421-8117d2ded809" absoluteBounds="6.765, 2.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b640337f-1f97-42d0-a094-211881183bc0" absoluteBounds="9.5, 3, 2, 1.5785953776041666">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Login" />
       <nestedChildShapes>
-        <elementListCompartment Id="74c79ae7-ad11-4d5c-bd19-11ca2793a12f" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="88840b3a-e11b-4004-8987-2c9b04a6718a" absoluteBounds="9.515, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f4765ef-71b5-4103-be2b-82ec6bc7cde1" absoluteBounds="6.25, 13, 2, 2.1554996744791666">
+    <classShape Id="2a68601e-0206-47b5-90a9-66747f1d6fb4" absoluteBounds="6.25, 13, 2, 2.1554996744791666">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Payment" />
       <nestedChildShapes>
-        <elementListCompartment Id="56e59090-c9da-488c-85cd-c010090de51f" absoluteBounds="6.265, 13.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="982fad28-6b66-4dc0-a844-74f1c914cdbd" absoluteBounds="6.265, 13.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="259f14b4-063e-4e03-9e75-02c2803e3238" absoluteBounds="3.5, 7.5, 2, 1.9631982421874987">
+    <classShape Id="2a7e20f6-dfed-4f7c-b5dc-646964dfa966" absoluteBounds="3.5, 7.5, 2, 1.9631982421874987">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Salary" />
       <nestedChildShapes>
-        <elementListCompartment Id="bf5d7440-61ab-4a86-a0a8-a4b6c69f6331" absoluteBounds="3.515, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="215fbdf2-f856-4402-bb6e-eb3e28a74295" absoluteBounds="3.515, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5a12f75d-dcda-4f6a-8309-2a21df47ed59" absoluteBounds="3.5, 1.875, 2, 1.7708968098958331">
+    <classShape Id="9dddbc05-5eec-46f3-85a0-adf6a8e983b6" absoluteBounds="3.5, 1.875, 2, 1.7708968098958331">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Schedule" />
       <nestedChildShapes>
-        <elementListCompartment Id="81e480e1-139d-4626-bdc5-3b32984c7c7c" absoluteBounds="3.515, 2.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e8979c50-6799-4b48-b140-95eb779c9c32" absoluteBounds="3.515, 2.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c0a5d4da-70f7-467d-9797-fc46d53bf0d5" absoluteBounds="0.75, 3.875, 2, 1.7708968098958327">
+    <classShape Id="c8754e93-08cf-48b6-ba9a-e0b9a647fbd9" absoluteBounds="9.5, 1, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/SaiYogaDBDataContext/Session" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9acf8a4-856b-48df-b672-f73e5b5b0203" absoluteBounds="9.515, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2ef6ec2-bba9-4c5b-9e36-3f2d4763e523" absoluteBounds="0.75, 3.875, 2, 1.7708968098958327">
       <DataClassMoniker Name="/SaiYogaDBDataContext/Teacher" />
       <nestedChildShapes>
-        <elementListCompartment Id="8fb53776-7f1f-414b-a648-567e1bde2675" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2e76db08-51a4-41ea-b3e0-938d2bab5bd1" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e42d5fe1-370b-467d-981f-5ff4c73bea4a" absoluteBounds="3.5, 5, 2, 1.7708968098958327">
+    <classShape Id="e1ba94a7-c433-438e-be05-cee9e4d4236e" absoluteBounds="3.5, 5, 2, 1.7708968098958327">
       <DataClassMoniker Name="/SaiYogaDBDataContext/TeacherAttendance" />
       <nestedChildShapes>
-        <elementListCompartment Id="2dd140d4-46d3-4f5f-bef3-45a2651ab186" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0c710099-4f28-4c1e-a1fc-3e68733e2e1c" absoluteBounds="3.515, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5.5 : 11.9767976888021); (6.25 : 11.9767976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Trainee/Trainee_Attendance" />
       <nodes>
-        <classShapeMoniker Id="f88dbf63-3ae3-40a8-bd46-33b47bafbc0a" />
-        <classShapeMoniker Id="428df454-c6bb-4f38-8380-12471edfb1c2" />
+        <classShapeMoniker Id="4af3b824-7bf7-4475-9277-5db28d5098d6" />
+        <classShapeMoniker Id="bf026e96-6e8d-4a8a-b9c3-f9cfa3d252fa" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.7131982421875); (3.125 : 3.0881982421875); (3.125 : 12.8277498372396); (3.5 : 12.8277498372396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Course/Course_Trainee" />
       <nodes>
-        <classShapeMoniker Id="5e5d6f77-699b-4603-9af2-499223020f11" />
-        <classShapeMoniker Id="f88dbf63-3ae3-40a8-bd46-33b47bafbc0a" />
+        <classShapeMoniker Id="84bbd82f-07de-48c7-909f-1ab3e99bb627" />
+        <classShapeMoniker Id="4af3b824-7bf7-4475-9277-5db28d5098d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 3.32294840494792); (9.5 : 3.32294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SaiYogaDBDataContext/Employee/Employee_Login" />
+      <nodes>
+        <classShapeMoniker Id="a92ef1c5-80f8-4fe4-af4e-aaeca52039c3" />
+        <classShapeMoniker Id="b640337f-1f97-42d0-a094-211881183bc0" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 13.4527498372396); (6.25 : 13.4527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Trainee/Trainee_Payment" />
       <nodes>
-        <classShapeMoniker Id="f88dbf63-3ae3-40a8-bd46-33b47bafbc0a" />
-        <classShapeMoniker Id="8f4765ef-71b5-4103-be2b-82ec6bc7cde1" />
+        <classShapeMoniker Id="4af3b824-7bf7-4475-9277-5db28d5098d6" />
+        <classShapeMoniker Id="2a68601e-0206-47b5-90a9-66747f1d6fb4" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.26284662109375); (3.5 : 2.26284662109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Course/Course_Schedule" />
       <nodes>
-        <classShapeMoniker Id="5e5d6f77-699b-4603-9af2-499223020f11" />
-        <classShapeMoniker Id="5a12f75d-dcda-4f6a-8309-2a21df47ed59" />
+        <classShapeMoniker Id="84bbd82f-07de-48c7-909f-1ab3e99bb627" />
+        <classShapeMoniker Id="9dddbc05-5eec-46f3-85a0-adf6a8e983b6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 2.03449625651042); (9.5 : 2.03449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SaiYogaDBDataContext/Employee/Employee_Session" />
+      <nodes>
+        <classShapeMoniker Id="a92ef1c5-80f8-4fe4-af4e-aaeca52039c3" />
+        <classShapeMoniker Id="c8754e93-08cf-48b6-ba9a-e0b9a647fbd9" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 5.64589680989583); (1.75 : 8.48159912109375); (3.04166666666667 : 8.48159912109375 : JumpStart); (3.20833333333333 : 8.48159912109375 : JumpEnd); (3.5 : 8.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Teacher/Teacher_Salary" />
       <nodes>
-        <classShapeMoniker Id="c0a5d4da-70f7-467d-9797-fc46d53bf0d5" />
-        <classShapeMoniker Id="259f14b4-063e-4e03-9e75-02c2803e3238" />
+        <classShapeMoniker Id="f2ef6ec2-bba9-4c5b-9e36-3f2d4763e523" />
+        <classShapeMoniker Id="2a7e20f6-dfed-4f7c-b5dc-646964dfa966" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 3.9362992741887); (3.06607443490112 : 3.62022483928758 : JumpStart); (3.18392556509888 : 3.50237370908982 : JumpEnd); (3.3125 : 3.3737992741887); (3.3125 : 3.83339680989583); (3.5 : 3.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Teacher/Teacher_Schedule" />
       <nodes>
-        <classShapeMoniker Id="c0a5d4da-70f7-467d-9797-fc46d53bf0d5" />
-        <classShapeMoniker Id="5a12f75d-dcda-4f6a-8309-2a21df47ed59" />
+        <classShapeMoniker Id="f2ef6ec2-bba9-4c5b-9e36-3f2d4763e523" />
+        <classShapeMoniker Id="9dddbc05-5eec-46f3-85a0-adf6a8e983b6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.32294840494792); (3.04166666666667 : 5.32294840494792 : JumpStart); (3.20833333333333 : 5.32294840494792 : JumpEnd); (3.5 : 5.32294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SaiYogaDBDataContext/Teacher/Teacher_TeacherAttendance" />
       <nodes>
-        <classShapeMoniker Id="c0a5d4da-70f7-467d-9797-fc46d53bf0d5" />
-        <classShapeMoniker Id="e42d5fe1-370b-467d-981f-5ff4c73bea4a" />
+        <classShapeMoniker Id="f2ef6ec2-bba9-4c5b-9e36-3f2d4763e523" />
+        <classShapeMoniker Id="e1ba94a7-c433-438e-be05-cee9e4d4236e" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

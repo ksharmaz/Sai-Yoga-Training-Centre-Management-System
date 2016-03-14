@@ -39,6 +39,9 @@ namespace SaiYogaTraining.Model
     partial void InsertCourse(Course instance);
     partial void UpdateCourse(Course instance);
     partial void DeleteCourse(Course instance);
+    partial void InsertEmployee(Employee instance);
+    partial void UpdateEmployee(Employee instance);
+    partial void DeleteEmployee(Employee instance);
     partial void InsertLogin(Login instance);
     partial void UpdateLogin(Login instance);
     partial void DeleteLogin(Login instance);
@@ -51,6 +54,9 @@ namespace SaiYogaTraining.Model
     partial void InsertSchedule(Schedule instance);
     partial void UpdateSchedule(Schedule instance);
     partial void DeleteSchedule(Schedule instance);
+    partial void InsertSession(Session instance);
+    partial void UpdateSession(Session instance);
+    partial void DeleteSession(Session instance);
     partial void InsertTeacher(Teacher instance);
     partial void UpdateTeacher(Teacher instance);
     partial void DeleteTeacher(Teacher instance);
@@ -113,6 +119,14 @@ namespace SaiYogaTraining.Model
 			}
 		}
 		
+		public System.Data.Linq.Table<Employee> Employees
+		{
+			get
+			{
+				return this.GetTable<Employee>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Login> Logins
 		{
 			get
@@ -142,6 +156,14 @@ namespace SaiYogaTraining.Model
 			get
 			{
 				return this.GetTable<Schedule>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Session> Sessions
+		{
+			get
+			{
+				return this.GetTable<Session>();
 			}
 		}
 		
@@ -878,55 +900,272 @@ namespace SaiYogaTraining.Model
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Employee")]
+	public partial class Employee : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _emp_id;
+		
+		private string _ename;
+		
+		private string _eaddress;
+		
+		private string _ephone;
+		
+		private string _etype;
+		
+		private EntitySet<Login> _Logins;
+		
+		private EntitySet<Session> _Sessions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onemp_idChanging(int value);
+    partial void Onemp_idChanged();
+    partial void OnenameChanging(string value);
+    partial void OnenameChanged();
+    partial void OneaddressChanging(string value);
+    partial void OneaddressChanged();
+    partial void OnephoneChanging(string value);
+    partial void OnephoneChanged();
+    partial void OnetypeChanging(string value);
+    partial void OnetypeChanged();
+    #endregion
+		
+		public Employee()
+		{
+			this._Logins = new EntitySet<Login>(new Action<Login>(this.attach_Logins), new Action<Login>(this.detach_Logins));
+			this._Sessions = new EntitySet<Session>(new Action<Session>(this.attach_Sessions), new Action<Session>(this.detach_Sessions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emp_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int emp_id
+		{
+			get
+			{
+				return this._emp_id;
+			}
+			set
+			{
+				if ((this._emp_id != value))
+				{
+					this.Onemp_idChanging(value);
+					this.SendPropertyChanging();
+					this._emp_id = value;
+					this.SendPropertyChanged("emp_id");
+					this.Onemp_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ename", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string ename
+		{
+			get
+			{
+				return this._ename;
+			}
+			set
+			{
+				if ((this._ename != value))
+				{
+					this.OnenameChanging(value);
+					this.SendPropertyChanging();
+					this._ename = value;
+					this.SendPropertyChanged("ename");
+					this.OnenameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eaddress", DbType="VarChar(255)")]
+		public string eaddress
+		{
+			get
+			{
+				return this._eaddress;
+			}
+			set
+			{
+				if ((this._eaddress != value))
+				{
+					this.OneaddressChanging(value);
+					this.SendPropertyChanging();
+					this._eaddress = value;
+					this.SendPropertyChanged("eaddress");
+					this.OneaddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ephone", DbType="VarChar(15)")]
+		public string ephone
+		{
+			get
+			{
+				return this._ephone;
+			}
+			set
+			{
+				if ((this._ephone != value))
+				{
+					this.OnephoneChanging(value);
+					this.SendPropertyChanging();
+					this._ephone = value;
+					this.SendPropertyChanged("ephone");
+					this.OnephoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_etype", DbType="VarChar(255)")]
+		public string etype
+		{
+			get
+			{
+				return this._etype;
+			}
+			set
+			{
+				if ((this._etype != value))
+				{
+					this.OnetypeChanging(value);
+					this.SendPropertyChanging();
+					this._etype = value;
+					this.SendPropertyChanged("etype");
+					this.OnetypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Login", Storage="_Logins", ThisKey="emp_id", OtherKey="emp_id")]
+		public EntitySet<Login> Logins
+		{
+			get
+			{
+				return this._Logins;
+			}
+			set
+			{
+				this._Logins.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Session", Storage="_Sessions", ThisKey="emp_id", OtherKey="emp_id")]
+		public EntitySet<Session> Sessions
+		{
+			get
+			{
+				return this._Sessions;
+			}
+			set
+			{
+				this._Sessions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Logins(Login entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_Logins(Login entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+		
+		private void attach_Sessions(Session entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = this;
+		}
+		
+		private void detach_Sessions(Session entity)
+		{
+			this.SendPropertyChanging();
+			entity.Employee = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Login")]
 	public partial class Login : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _sr_no;
+		private int _loginid;
 		
 		private string _userid;
 		
 		private string _passwd;
 		
-		private string _ltype;
+		private System.Nullable<int> _emp_id;
+		
+		private EntityRef<Employee> _Employee;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onsr_noChanging(int value);
-    partial void Onsr_noChanged();
+    partial void OnloginidChanging(int value);
+    partial void OnloginidChanged();
     partial void OnuseridChanging(string value);
     partial void OnuseridChanged();
     partial void OnpasswdChanging(string value);
     partial void OnpasswdChanged();
-    partial void OnltypeChanging(string value);
-    partial void OnltypeChanged();
+    partial void Onemp_idChanging(System.Nullable<int> value);
+    partial void Onemp_idChanged();
     #endregion
 		
 		public Login()
 		{
+			this._Employee = default(EntityRef<Employee>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sr_no", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int sr_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loginid", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int loginid
 		{
 			get
 			{
-				return this._sr_no;
+				return this._loginid;
 			}
 			set
 			{
-				if ((this._sr_no != value))
+				if ((this._loginid != value))
 				{
-					this.Onsr_noChanging(value);
+					this.OnloginidChanging(value);
 					this.SendPropertyChanging();
-					this._sr_no = value;
-					this.SendPropertyChanged("sr_no");
-					this.Onsr_noChanged();
+					this._loginid = value;
+					this.SendPropertyChanged("loginid");
+					this.OnloginidChanged();
 				}
 			}
 		}
@@ -971,22 +1210,60 @@ namespace SaiYogaTraining.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ltype", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string ltype
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emp_id", DbType="Int")]
+		public System.Nullable<int> emp_id
 		{
 			get
 			{
-				return this._ltype;
+				return this._emp_id;
 			}
 			set
 			{
-				if ((this._ltype != value))
+				if ((this._emp_id != value))
 				{
-					this.OnltypeChanging(value);
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onemp_idChanging(value);
 					this.SendPropertyChanging();
-					this._ltype = value;
-					this.SendPropertyChanged("ltype");
-					this.OnltypeChanged();
+					this._emp_id = value;
+					this.SendPropertyChanged("emp_id");
+					this.Onemp_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Login", Storage="_Employee", ThisKey="emp_id", OtherKey="emp_id", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.Logins.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.Logins.Add(this);
+						this._emp_id = value.emp_id;
+					}
+					else
+					{
+						this._emp_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Employee");
 				}
 			}
 		}
@@ -1697,6 +1974,133 @@ namespace SaiYogaTraining.Model
 						this._teacher_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Teacher");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Session")]
+	public partial class Session : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _sid;
+		
+		private System.Nullable<int> _emp_id;
+		
+		private EntityRef<Employee> _Employee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnsidChanging(int value);
+    partial void OnsidChanged();
+    partial void Onemp_idChanging(System.Nullable<int> value);
+    partial void Onemp_idChanged();
+    #endregion
+		
+		public Session()
+		{
+			this._Employee = default(EntityRef<Employee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sid", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int sid
+		{
+			get
+			{
+				return this._sid;
+			}
+			set
+			{
+				if ((this._sid != value))
+				{
+					this.OnsidChanging(value);
+					this.SendPropertyChanging();
+					this._sid = value;
+					this.SendPropertyChanged("sid");
+					this.OnsidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emp_id", DbType="Int")]
+		public System.Nullable<int> emp_id
+		{
+			get
+			{
+				return this._emp_id;
+			}
+			set
+			{
+				if ((this._emp_id != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onemp_idChanging(value);
+					this.SendPropertyChanging();
+					this._emp_id = value;
+					this.SendPropertyChanged("emp_id");
+					this.Onemp_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Session", Storage="_Employee", ThisKey="emp_id", OtherKey="emp_id", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.Sessions.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.Sessions.Add(this);
+						this._emp_id = value.emp_id;
+					}
+					else
+					{
+						this._emp_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Employee");
 				}
 			}
 		}

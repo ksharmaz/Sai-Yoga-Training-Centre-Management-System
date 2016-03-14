@@ -62,7 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\DBConnection.cs" />
     <Compile Include="Model\SaiYogaDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +74,12 @@
     </Compile>
     <Compile Include="View\Course.Designer.cs">
       <DependentUpon>Course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CourseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CourseInfo.Designer.cs">
+      <DependentUpon>CourseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GlobalForm.cs">
       <SubType>Form</SubType>
@@ -106,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="View\Course.resx">
       <DependentUpon>Course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CourseInfo.resx">
+      <DependentUpon>CourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>

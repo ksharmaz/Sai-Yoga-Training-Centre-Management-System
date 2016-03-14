@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SaiYogaDB" Class="SaiYogaDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=APOLLO\SQLEXPRESS;Initial Catalog=SaiYogaDB;User ID=sa" SettingsObjectName="SaiYogaTraining.Properties.Settings" SettingsPropertyName="SaiYogaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=SaiYogaDB;Integrated Security=True" SettingsObjectName="SaiYogaTraining.Properties.Settings" SettingsPropertyName="SaiYogaDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Attendance" Member="Attendances">
     <Type Name="Attendance">
       <Column Name="sr_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -35,12 +35,24 @@
       <Association Name="Course_Schedule" Member="Schedules" ThisKey="course_id" OtherKey="course_id" Type="Schedule" />
     </Type>
   </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ename" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="eaddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ephone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="etype" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Employee_Login" Member="Logins" ThisKey="emp_id" OtherKey="emp_id" Type="Login" />
+      <Association Name="Employee_Session" Member="Sessions" ThisKey="emp_id" OtherKey="emp_id" Type="Session" />
+    </Type>
+  </Table>
   <Table Name="dbo.Login" Member="Logins">
     <Type Name="Login">
-      <Column Name="sr_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="loginid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="userid" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="passwd" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="ltype" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_Login" Member="Employee" ThisKey="emp_id" OtherKey="emp_id" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Payment" Member="Payments">
@@ -75,6 +87,13 @@
       <Column Name="course_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Course_Schedule" Member="Course" ThisKey="course_id" OtherKey="course_id" Type="Course" IsForeignKey="true" />
       <Association Name="Teacher_Schedule" Member="Teacher" ThisKey="teacher_id" OtherKey="teacher_id" Type="Teacher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Session" Member="Sessions">
+    <Type Name="Session">
+      <Column Name="sid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_Session" Member="Employee" ThisKey="emp_id" OtherKey="emp_id" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Teacher" Member="Teachers">
