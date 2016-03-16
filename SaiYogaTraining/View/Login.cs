@@ -14,6 +14,7 @@ namespace SaiYogaTraining.View
     public partial class Login : GlobalForm
     {
         Thread th;
+        Session s1;
 
         public Login()
         {
@@ -22,45 +23,61 @@ namespace SaiYogaTraining.View
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            try
+            LoginModel log = new LoginModel();
+            bool isLogin = log.ValidateLogin(usrtxt.Text, passwdtxt.Text, GetRadioName());
+            if (isLogin)
             {
-                SaiYogaDBDataContext dbcontext = new SaiYogaDBDataContext();
-                var LoginQuery = (from login in dbcontext.Logins
-                                  where login.userid.Equals(usrtxt.Text) && login.passwd.Equals(passwdtxt.Text)
-                                  select login).FirstOrDefault();
-
-                if(LoginQuery != null)
+                s1 = new Session(log.GetLoginID());
+                if (s1.hasSession())
                 {
-                    //if (LoginQuery.ltype.Equals("administrator"))
-                    //{
-                    //    this.Close();
-                    //    th = new Thread(OpenAdminForm);
-                    //    th.SetApartmentState(ApartmentState.STA);
-                    //    th.Start();
-                    //}
-                    //else if (LoginQuery.ltype.Equals("employee"))
-                    //{
-                    //    //this.Close();
-                    //    //th = new Thread(OpenEmployForm);
-                    //    //th.SetApartmentState(ApartmentState.STA);
-                    //    //th.Start();
-                    //}
-                    MessageBox.Show("TODO");
+                    if (log.GetLoginType().Equals("administrator"))
+                        CreateNewForm(OpenAdminForm);
+                    else if (log.GetLoginType().Equals("employee") || log.GetLoginType().Equals("teacher"))
+                    {
+                        if (log.GetLoginType().Equals("teacher"))
+                            Console.WriteLine(); //TODO: Teacher form
+                        else
+                            CreateNewForm(OpenEmployForm);
+                    }
+                        
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login/Password or Login Type", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something Went Wrong !! Please Relogin", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
-            catch(Exception exp)
+            else
             {
-                MessageBox.Show("Database Connection Error: " + exp.Message);
+                MessageBox.Show("Invalid Login/Password or Login Type", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("TODO: Show Change Password Form");
+        }
+
+        #region Private Helper Methods
+
+        private void CreateNewForm(ThreadStart formName)
+        {
+            this.Close();
+            th = new Thread(formName);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
 
         private void OpenAdminForm()
         {
-            Application.Run(new Course());
+            var admin = new Administrator();
+            admin.s1 = s1;
+            Application.Run(admin);
+        }
+
+        private void OpenEmployForm()
+        {
+            throw new NotImplementedException();
         }
 
         private string GetRadioName()
@@ -68,9 +85,6 @@ namespace SaiYogaTraining.View
             return typegrp.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("TODO: Show Change Password Form");
-        }
+        #endregion
     }
 }

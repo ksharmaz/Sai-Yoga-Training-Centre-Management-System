@@ -62,13 +62,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\SaiYogaDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SaiYogaDB.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Administrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrontLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrontLogin.Designer.cs">
+      <DependentUpon>FrontLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Course.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +107,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Model\SaiYogaDB.dbml.layout">
-      <DependentUpon>SaiYogaDB.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,6 +117,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Administrator.resx">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrontLogin.resx">
+      <DependentUpon>FrontLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Course.resx">
       <DependentUpon>Course.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,11 +135,6 @@
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Model\SaiYogaDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>SaiYogaDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
