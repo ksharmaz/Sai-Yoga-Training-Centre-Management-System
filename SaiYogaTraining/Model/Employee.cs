@@ -11,7 +11,7 @@ namespace SaiYogaTraining.Model
         public string Name { get; set; }
         private string Address { get; set; }
         private string Phone { get; set; }
-        private string Type { get; set; }
+        public string Type { get; set; }
 
         public Employee(string emp_id)
         {

@@ -12,6 +12,14 @@ namespace SaiYogaTraining.View
 {
     public partial class EmployeeLoginForm : FrontLogin
     {
+        private Employee emp;
+
+        internal Employee Emp
+        {
+            get{ return emp;}
+            set {emp = value;}
+        }
+
         public EmployeeLoginForm()
         {
             InitializeComponent();
@@ -19,7 +27,7 @@ namespace SaiYogaTraining.View
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            var emp = new Employee(s1.SessionID);
+            emp = new Employee(s1.SessionID);
             uname.Text = emp.Name;
         }
 
@@ -37,6 +45,13 @@ namespace SaiYogaTraining.View
         {
             AdmissionForm admission = new AdmissionForm();
             admission.Show();
+        }
+
+        private void courseBtn_Click(object sender, EventArgs e)
+        {
+            var course = new CourseForm();
+            course.Emp = this.Emp;
+            course.Show();
         }
     }
 }

@@ -33,7 +33,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.searchbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addCourseBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -42,7 +42,7 @@
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.button2);
-            this.mainPanel.Controls.Add(this.button1);
+            this.mainPanel.Controls.Add(this.addCourseBtn);
             this.mainPanel.Controls.Add(this.searchbtn);
             this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Controls.Add(this.richTextBox1);
@@ -94,16 +94,16 @@
             this.searchbtn.TabIndex = 2;
             this.searchbtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // addCourseBtn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(248, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add Course";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addCourseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addCourseBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCourseBtn.Location = new System.Drawing.Point(248, 121);
+            this.addCourseBtn.Name = "addCourseBtn";
+            this.addCourseBtn.Size = new System.Drawing.Size(126, 38);
+            this.addCourseBtn.TabIndex = 3;
+            this.addCourseBtn.Text = "Add Course";
+            this.addCourseBtn.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -116,14 +116,14 @@
             this.button2.Text = "Check Schedule";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Course
+            // CourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 640);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "Course";
+            this.Name = "CourseForm";
             this.Text = "Sai Yoga Training Centre - Courses";
             this.Load += new System.EventHandler(this.Course_Load);
             this.Controls.SetChildIndex(this.banner, 0);
@@ -144,6 +144,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addCourseBtn;
     }
 }
