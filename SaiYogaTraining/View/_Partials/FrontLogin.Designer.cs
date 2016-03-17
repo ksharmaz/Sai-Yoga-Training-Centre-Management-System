@@ -97,6 +97,6 @@
 
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Label uname;
-        private System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Label label1;
     }
 }
