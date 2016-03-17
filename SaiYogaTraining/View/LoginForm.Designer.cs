@@ -1,6 +1,6 @@
 ﻿namespace SaiYogaTraining.View
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.

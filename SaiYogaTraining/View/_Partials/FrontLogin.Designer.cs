@@ -60,7 +60,7 @@
             // 
             this.uname.AutoSize = true;
             this.uname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uname.Location = new System.Drawing.Point(209, 27);
+            this.uname.Location = new System.Drawing.Point(200, 28);
             this.uname.Name = "uname";
             this.uname.Size = new System.Drawing.Size(41, 20);
             this.uname.TabIndex = 1;
@@ -95,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Label uname;
         private System.Windows.Forms.Label label1;
     }

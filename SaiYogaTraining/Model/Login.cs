@@ -7,10 +7,10 @@ using System.Data.SqlClient;
 
 namespace SaiYogaTraining.Model
 {
-    class LoginModel : Connection
+    class Login : Connection
     {
-        private string loginType = null;
-        private string loginID = null;
+        public string loginType { get; set; }
+        public string loginID { get; set; }
 
         public bool ValidateLogin(string user, string pass, string ltype)
         {
@@ -47,17 +47,5 @@ namespace SaiYogaTraining.Model
                 CloseConnect();
             }
         }
-
-        #region Accessor
-        public string GetLoginType()
-        {
-            return loginType;
-        }
-
-        public string GetLoginID()
-        {
-            return loginID;
-        }
-        #endregion
     }
 }

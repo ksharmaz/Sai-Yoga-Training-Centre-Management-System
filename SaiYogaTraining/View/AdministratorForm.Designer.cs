@@ -1,6 +1,6 @@
 ﻿namespace SaiYogaTraining.View
 {
-    partial class Administrator
+    partial class AdministratorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,14 +35,14 @@
             // 
             this.uname.Location = new System.Drawing.Point(199, 27);
             // 
-            // Administrator
+            // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 640);
-            this.Name = "Administrator";
+            this.Name = "AdministratorForm";
             this.Text = "Sai Yoga Training - Admin Page";
-            this.Load += new System.EventHandler(this.Administrator_Load);
+            this.Load += new System.EventHandler(this.AdministratorForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.ResumeLayout(false);

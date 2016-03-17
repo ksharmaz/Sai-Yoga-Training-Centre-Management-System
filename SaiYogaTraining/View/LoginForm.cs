@@ -11,30 +11,30 @@ using SaiYogaTraining.Model;
 
 namespace SaiYogaTraining.View
 {
-    public partial class Login : GlobalForm
+    public partial class LoginForm : GlobalForm
     {
         Thread th;
         Session s1;
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            LoginModel log = new LoginModel();
+            Login log = new Login();
             bool isLogin = log.ValidateLogin(usrtxt.Text, passwdtxt.Text, GetRadioName());
             if (isLogin)
             {
-                s1 = new Session(log.GetLoginID());
+                s1 = new Session(log.loginID);
                 if (s1.hasSession())
                 {
-                    if (log.GetLoginType().Equals("administrator"))
+                    if (log.loginType.Equals("administrator"))
                         CreateNewForm(OpenAdminForm);
-                    else if (log.GetLoginType().Equals("employee") || log.GetLoginType().Equals("teacher"))
+                    else if (log.loginType.Equals("employee") || log.loginType.Equals("teacher"))
                     {
-                        if (log.GetLoginType().Equals("teacher"))
+                        if (log.loginType.Equals("teacher"))
                             Console.WriteLine(); //TODO: Teacher form
                         else
                             CreateNewForm(OpenEmployForm);
@@ -70,14 +70,16 @@ namespace SaiYogaTraining.View
 
         private void OpenAdminForm()
         {
-            var admin = new Administrator();
+            var admin = new AdministratorForm();
             admin.s1 = s1;
             Application.Run(admin);
         }
 
         private void OpenEmployForm()
         {
-            throw new NotImplementedException();
+            var employ = new EmployeeLoginForm();
+            employ.s1 = s1;
+            Application.Run(employ);
         }
 
         private string GetRadioName()

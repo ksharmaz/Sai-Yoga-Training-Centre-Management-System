@@ -9,21 +9,11 @@ using System.Windows.Forms;
 
 namespace SaiYogaTraining.View
 {
-    public partial class Course : GlobalForm
+    public partial class AdmissionForm : GlobalForm
     {
-        public Course()
+        public AdmissionForm()
         {
             InitializeComponent();
-        }
-
-        private void Course_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

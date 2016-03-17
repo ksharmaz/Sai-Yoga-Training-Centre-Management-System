@@ -8,7 +8,7 @@ namespace SaiYogaTraining.Model
 {
     class Session : Connection
     {
-        public readonly string sessionID;
+        public string SessionID { get; }
         private bool flag;
 
         public Session(string loginID)
@@ -28,10 +28,10 @@ namespace SaiYogaTraining.Model
                     SqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        sessionID = rdr[0].ToString();
+                        SessionID = rdr[0].ToString();
                     }
 
-                    if (num != -1 && sessionID != null)
+                    if (num != -1 && SessionID != null)
                         flag = true;
                     else
                         flag = false;
@@ -64,7 +64,7 @@ namespace SaiYogaTraining.Model
                 var conn = GetConnect();
                 var query = "DELETE FROM Session where sid=@sid";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.Add(new SqlParameter("@sid", s1.sessionID));
+                cmd.Parameters.Add(new SqlParameter("@sid", s1.SessionID));
                 int row = cmd.ExecuteNonQuery();
                 if (row != -1)
                     return true;
