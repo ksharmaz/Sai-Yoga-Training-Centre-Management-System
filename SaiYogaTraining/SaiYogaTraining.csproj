@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Session.cs" />

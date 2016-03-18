@@ -30,22 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.courseSearch = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.searchbtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.searchResult = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.searchResult);
             this.mainPanel.Controls.Add(this.button2);
             this.mainPanel.Controls.Add(this.addCourseBtn);
             this.mainPanel.Controls.Add(this.searchbtn);
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.richTextBox1);
+            this.mainPanel.Controls.Add(this.courseSearch);
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // banner
@@ -63,16 +65,16 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // richTextBox1
+            // courseSearch
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(248, 56);
-            this.richTextBox1.Multiline = false;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(395, 44);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.courseSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.courseSearch.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseSearch.Location = new System.Drawing.Point(248, 56);
+            this.courseSearch.Multiline = false;
+            this.courseSearch.Name = "courseSearch";
+            this.courseSearch.Size = new System.Drawing.Size(395, 44);
+            this.courseSearch.TabIndex = 0;
+            this.courseSearch.Text = "";
             // 
             // label1
             // 
@@ -93,6 +95,7 @@
             this.searchbtn.Size = new System.Drawing.Size(46, 44);
             this.searchbtn.TabIndex = 2;
             this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
             // addCourseBtn
             // 
@@ -115,6 +118,15 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Check Schedule";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // searchResult
+            // 
+            this.searchResult.BackColor = System.Drawing.SystemColors.Menu;
+            this.searchResult.Location = new System.Drawing.Point(135, 192);
+            this.searchResult.Name = "searchResult";
+            this.searchResult.Size = new System.Drawing.Size(700, 285);
+            this.searchResult.TabIndex = 5;
+            this.searchResult.Visible = false;
             // 
             // CourseForm
             // 
@@ -142,8 +154,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button searchbtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox courseSearch;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button addCourseBtn;
+        private System.Windows.Forms.Panel searchResult;
     }
 }
