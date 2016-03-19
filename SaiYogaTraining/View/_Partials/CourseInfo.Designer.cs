@@ -32,9 +32,8 @@ namespace SaiYogaTraining.View
         {
             this.title = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.edit = new System.Windows.Forms.Button();
-            this.del = new System.Windows.Forms.Button();
             this.description = new System.Windows.Forms.RichTextBox();
+            this.detailbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,53 +55,42 @@ namespace SaiYogaTraining.View
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
-            // edit
-            // 
-            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit.Location = new System.Drawing.Point(293, 139);
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(78, 27);
-            this.edit.TabIndex = 3;
-            this.edit.Text = "Edit";
-            this.edit.UseVisualStyleBackColor = true;
-            this.edit.Click += new System.EventHandler(this.edit_Click);
-            // 
-            // del
-            // 
-            this.del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.del.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.del.Location = new System.Drawing.Point(410, 139);
-            this.del.Name = "del";
-            this.del.Size = new System.Drawing.Size(78, 27);
-            this.del.TabIndex = 4;
-            this.del.Text = "Delete";
-            this.del.UseVisualStyleBackColor = true;
-            this.del.Click += new System.EventHandler(this.del_Click);
-            // 
             // description
             // 
-            this.description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
+            this.description.BackColor = System.Drawing.SystemColors.Window;
+            this.description.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.description.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.ForeColor = System.Drawing.Color.White;
+            this.description.ForeColor = System.Drawing.Color.Black;
             this.description.Location = new System.Drawing.Point(156, 47);
             this.description.Name = "description";
+            this.description.ReadOnly = true;
             this.description.Size = new System.Drawing.Size(332, 86);
             this.description.TabIndex = 5;
             this.description.Text = "";
+            // 
+            // detailbtn
+            // 
+            this.detailbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detailbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailbtn.Location = new System.Drawing.Point(374, 149);
+            this.detailbtn.Name = "detailbtn";
+            this.detailbtn.Size = new System.Drawing.Size(114, 27);
+            this.detailbtn.TabIndex = 4;
+            this.detailbtn.Text = "View Detail";
+            this.detailbtn.UseVisualStyleBackColor = true;
+            this.detailbtn.Click += new System.EventHandler(this.detailbtn_Click);
             // 
             // CourseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.description);
-            this.Controls.Add(this.del);
-            this.Controls.Add(this.edit);
+            this.Controls.Add(this.detailbtn);
             this.Controls.Add(this.title);
             this.Controls.Add(this.logo);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "CourseInfo";
             this.Size = new System.Drawing.Size(500, 200);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -115,9 +103,8 @@ namespace SaiYogaTraining.View
 
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button edit;
-        private System.Windows.Forms.Button del;
         private RichTextBox description;
+        private Button detailbtn;
 
         public PictureBox Logo
         {
@@ -145,32 +132,6 @@ namespace SaiYogaTraining.View
             }
         }
 
-        public Button Edit
-        {
-            get
-            {
-                return edit;
-            }
-
-            set
-            {
-                edit = value;
-            }
-        }
-
-        public Button Del
-        {
-            get
-            {
-                return del;
-            }
-
-            set
-            {
-                del = value;
-            }
-        }
-
         public RichTextBox Description
         {
             get
@@ -181,6 +142,19 @@ namespace SaiYogaTraining.View
             set
             {
                 description = value;
+            }
+        }
+
+        public Button Detailbtn
+        {
+            get
+            {
+                return detailbtn;
+            }
+
+            set
+            {
+                detailbtn = value;
             }
         }
     }

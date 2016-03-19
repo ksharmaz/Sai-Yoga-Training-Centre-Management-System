@@ -58,7 +58,7 @@ namespace SaiYogaTraining.View
                         var infoctrl = new CourseInfo();
                         infoctrl.CourseID = row["course_id"].ToString();
                         infoctrl.Title.Text = row["course_name"].ToString();
-                        infoctrl.Description.Text = row["benefits"]==null ? "No Description" : row["benefits"].ToString();
+                        infoctrl.Description.Text = string.IsNullOrEmpty(row["benefits"].ToString()) ? "No Description" : row["benefits"].ToString();
                         //infoctrl.Logo.Image = row["image"];
                         //infoctrl = null;
                         //TODO: add control functionality
@@ -71,11 +71,10 @@ namespace SaiYogaTraining.View
                 searchResult.Controls.Clear();
                 foreach(var lst in list)
                 {
-                    int X = 80;
+                    int X = 100;
                     int Y = yaxis;
                     lst.Location = new Point(X, Y);
                     searchResult.Controls.Add(lst);
-                    Console.WriteLine(lst.Title.ToString());
                     yaxis = int.Parse(lst.Location.Y.ToString()) + 220;
                 }
                 

@@ -121,7 +121,7 @@
             // 
             // searchResult
             // 
-            this.searchResult.BackColor = System.Drawing.SystemColors.Menu;
+            this.searchResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.searchResult.Location = new System.Drawing.Point(135, 192);
             this.searchResult.Name = "searchResult";
             this.searchResult.Size = new System.Drawing.Size(700, 285);

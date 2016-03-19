@@ -32,21 +32,9 @@ namespace SaiYogaTraining.View
             }
         }
 
-        private void edit_Click(object sender, EventArgs e)
+        private void detailbtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(CourseID);
-        }
-
-        private void del_Click(object sender, EventArgs e)
-        {
-            Course crs = new Course();
-            if (crs.Delete(CourseID))
-            {
-                this.Visible = false;
-                MessageBox.Show("Course Deleted", "Course Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("Something Went Wrong!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Show details");
         }
     }
 }
