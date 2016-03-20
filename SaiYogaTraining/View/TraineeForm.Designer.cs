@@ -130,6 +130,7 @@
             // 
             // imgbox
             // 
+            this.imgbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgbox.Location = new System.Drawing.Point(602, 49);
             this.imgbox.Name = "imgbox";
             this.imgbox.Size = new System.Drawing.Size(120, 120);
@@ -205,7 +206,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(209)))), ((int)(((byte)(186)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Location = new System.Drawing.Point(594, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(137, 152);

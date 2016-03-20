@@ -56,8 +56,8 @@
             // 
             // banner
             // 
-            this.banner.Size = new System.Drawing.Size(446, 72);
-            this.banner.Text = "Modify Course";
+            this.banner.Size = new System.Drawing.Size(468, 72);
+            this.banner.Text = "Manage Course";
             // 
             // panel1
             // 

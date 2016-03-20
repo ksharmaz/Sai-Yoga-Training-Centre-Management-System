@@ -67,6 +67,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Session.cs" />
+    <Compile Include="Model\Teacher.cs" />
     <Compile Include="Model\Trainee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="View\EmployeeLoginForm.Designer.cs">
       <DependentUpon>EmployeeLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherForm.Designer.cs">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TraineeForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +143,9 @@
     <Compile Include="View\_Partials\PopupForm.Designer.cs">
       <DependentUpon>PopupForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\TeacherForm.resx">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\_Partials\PopupForm.resx">
       <DependentUpon>PopupForm.cs</DependentUpon>
     </EmbeddedResource>

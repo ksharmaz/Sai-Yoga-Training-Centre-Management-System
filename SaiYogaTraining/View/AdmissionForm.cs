@@ -121,10 +121,13 @@ namespace SaiYogaTraining.View
         private void AdmissionForm_Load(object sender, EventArgs e)
         {
             var dict = Course.CourseList();
-            coursedrop.DataSource = new BindingSource(dict, null);
-            coursedrop.DisplayMember = "Value";
-            coursedrop.ValueMember = "Key";
-            coursedrop.SelectedIndex = 0;
+            if(dict.Count > 0)
+            {
+                coursedrop.DataSource = new BindingSource(dict, null);
+                coursedrop.DisplayMember = "Value";
+                coursedrop.ValueMember = "Key";
+                coursedrop.SelectedIndex = 0;
+            }
         }
 
         private byte[] UploadImage(Image img)
