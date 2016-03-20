@@ -63,6 +63,16 @@ namespace SaiYogaTraining.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _default {
+            get {
+                object obj = ResourceManager.GetObject("_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_bookmark_icon {
             get {
                 object obj = ResourceManager.GetObject("book_bookmark_icon", resourceCulture);
@@ -133,9 +143,39 @@ namespace SaiYogaTraining.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap user_male_icon {
+            get {
+                object obj = ResourceManager.GetObject("user-male-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap yoga {
             get {
                 object obj = ResourceManager.GetObject("yoga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YOGA_TEXT {
+            get {
+                object obj = ResourceManager.GetObject("YOGA TEXT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yoga_three_panel {
+            get {
+                object obj = ResourceManager.GetObject("yoga_three_panel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -14,7 +14,7 @@ namespace SaiYogaTraining.Model
 
         public bool ValidateLogin(string user, string pass, string ltype)
         {
-            var conn = this.GetConnect();
+            var conn = GetConnect();
             string query = "SELECT TOP 1 employee.emp_id, login.userid, login.passwd, employee.etype from Login JOIN Employee ON Login.emp_id = Employee.emp_id " +
                            "WHERE userid = @id and passwd = @pass and etype = @type;";
             SqlCommand cmd = new SqlCommand(query, conn);

@@ -8,18 +8,18 @@ namespace SaiYogaTraining.Model
 {
     class Connection
     {
-        private SqlConnection conn;
+        private static SqlConnection conn;
 
         protected Connection()
         {
             conn = new SqlConnection(global::SaiYogaTraining.Properties.Settings.Default.SaiYogaDBConnectionString);
         }
-        public SqlConnection GetConnect()
+        public static SqlConnection GetConnect()
         {
             conn.Open();
             return conn;
         }
-        public void CloseConnect()
+        public static void CloseConnect()
         {
             conn.Close();
         }

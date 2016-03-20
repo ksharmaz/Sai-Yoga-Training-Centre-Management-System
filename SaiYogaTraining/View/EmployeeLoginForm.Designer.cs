@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.courseBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.traineebtn = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.traineebtn);
             this.panel2.Controls.Add(this.courseBtn);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.admissionbtn);
@@ -149,6 +151,17 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "GO TO";
             // 
+            // traineebtn
+            // 
+            this.traineebtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.traineebtn.Location = new System.Drawing.Point(47, 167);
+            this.traineebtn.Name = "traineebtn";
+            this.traineebtn.Size = new System.Drawing.Size(320, 46);
+            this.traineebtn.TabIndex = 6;
+            this.traineebtn.Text = "Trainee Page";
+            this.traineebtn.UseVisualStyleBackColor = true;
+            this.traineebtn.Click += new System.EventHandler(this.traineebtn_Click);
+            // 
             // EmployeeLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,5 +189,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button courseBtn;
+        private System.Windows.Forms.Button traineebtn;
     }
 }

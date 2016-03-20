@@ -82,11 +82,29 @@
     <Compile Include="View\AdmissionForm.Designer.cs">
       <DependentUpon>AdmissionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CourseAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CourseAddForm.Designer.cs">
+      <DependentUpon>CourseAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\EmployeeLoginForm.Designer.cs">
       <DependentUpon>EmployeeLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TraineeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TraineeForm.Designer.cs">
+      <DependentUpon>TraineeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\_Partials\DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\_Partials\DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\_Partials\FrontLogin.cs">
       <SubType>Form</SubType>
@@ -100,12 +118,6 @@
     <Compile Include="View\CourseForm.Designer.cs">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\_Partials\CourseInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\_Partials\CourseInfo.Designer.cs">
-      <DependentUpon>CourseInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\_Partials\GlobalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,15 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\_Partials\PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\_Partials\PopupForm.Designer.cs">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\_Partials\PopupForm.resx">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -137,17 +158,23 @@
     <EmbeddedResource Include="View\AdmissionForm.resx">
       <DependentUpon>AdmissionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CourseAddForm.resx">
+      <DependentUpon>CourseAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeLoginForm.resx">
       <DependentUpon>EmployeeLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TraineeForm.resx">
+      <DependentUpon>TraineeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\_Partials\DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\_Partials\FrontLogin.resx">
       <DependentUpon>FrontLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\_Partials\CourseInfo.resx">
-      <DependentUpon>CourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\_Partials\GlobalForm.resx">
       <DependentUpon>GlobalForm.cs</DependentUpon>
@@ -211,6 +238,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sign-error-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-male-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YOGA TEXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yoga_three_panel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

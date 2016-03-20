@@ -47,6 +47,7 @@
             this.tnamef = new System.Windows.Forms.TextBox();
             this.lbl = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.admissionPanel.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             this.mainPanel.Controls.Add(this.admissionPanel);
             this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Size = new System.Drawing.Size(1104, 671);
             // 
             // banner
@@ -79,8 +81,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(86, 34);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(86, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 25);
             this.label1.TabIndex = 0;
@@ -104,9 +108,9 @@
             this.admissionPanel.Controls.Add(this.tnamef);
             this.admissionPanel.Controls.Add(this.lbl);
             this.admissionPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.admissionPanel.Location = new System.Drawing.Point(91, 62);
+            this.admissionPanel.Location = new System.Drawing.Point(91, 46);
             this.admissionPanel.Name = "admissionPanel";
-            this.admissionPanel.Size = new System.Drawing.Size(753, 519);
+            this.admissionPanel.Size = new System.Drawing.Size(753, 484);
             this.admissionPanel.TabIndex = 1;
             // 
             // uploadtick
@@ -123,7 +127,7 @@
             // 
             // proceedbtn
             // 
-            this.proceedbtn.Location = new System.Drawing.Point(295, 437);
+            this.proceedbtn.Location = new System.Drawing.Point(296, 420);
             this.proceedbtn.Name = "proceedbtn";
             this.proceedbtn.Size = new System.Drawing.Size(134, 29);
             this.proceedbtn.TabIndex = 11;
@@ -133,6 +137,7 @@
             // 
             // coursedrop
             // 
+            this.coursedrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coursedrop.FormattingEnabled = true;
             this.coursedrop.Location = new System.Drawing.Point(225, 351);
             this.coursedrop.Name = "coursedrop";
@@ -239,14 +244,23 @@
             this.errorProvider.ContainerControl = this;
             this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
+            this.panel1.Location = new System.Drawing.Point(78, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(779, 532);
+            this.panel1.TabIndex = 2;
+            // 
             // AdmissionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 760);
+            this.ClientSize = new System.Drawing.Size(924, 698);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AdmissionForm";
             this.Text = "Sai Yoga Training - Admission";
+            this.Load += new System.EventHandler(this.AdmissionForm_Load);
             this.Controls.SetChildIndex(this.banner, 0);
             this.Controls.SetChildIndex(this.mainPanel, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
@@ -281,5 +295,6 @@
         private System.Windows.Forms.Button proceedbtn;
         private System.Windows.Forms.PictureBox uploadtick;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Panel panel1;
     }
 }

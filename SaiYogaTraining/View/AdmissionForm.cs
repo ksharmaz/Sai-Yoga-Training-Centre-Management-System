@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using SaiYogaTraining.Model;
 using System.Text.RegularExpressions;
@@ -13,7 +14,7 @@ namespace SaiYogaTraining.View
 {
     public partial class AdmissionForm : GlobalForm
     {
-        private Image img;
+        private byte[] image = null;
 
         public AdmissionForm()
         {
@@ -26,8 +27,9 @@ namespace SaiYogaTraining.View
             opfd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (opfd.ShowDialog() == DialogResult.OK)
             {
-                img = Image.FromFile(opfd.FileName);
-                if(img == null)
+                Image img = Image.FromFile(opfd.FileName);
+                image = UploadImage(img);
+                if (image == null)
                 {
                     MessageBox.Show("Image Upload Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     uploadtick.Image = SaiYogaTraining.Properties.Resources.sign_error_icon;
@@ -39,13 +41,27 @@ namespace SaiYogaTraining.View
         private void proceedbtn_Click(object sender, EventArgs e)
         {
             Trainee tn = new Trainee();
-            tn.Photo = img;
+            if(image == null)
+            {
+                Image img = global::SaiYogaTraining.Properties.Resources._default;
+                image = UploadImage(img);
+            }
+            tn.Photo = image;
             string tname = String.Concat(tnamef.Text.Trim(), " ", tnamel.Text.Trim());
             tn.Name = tname.Trim();
             tn.Address = taddress.Text.Trim();
             tn.Contact = tcontact.Text.Trim();
-            tn.CourseID = coursedrop.Text.Trim();
+            tn.CourseID = coursedrop.SelectedValue.ToString();
             tn.Date = DateTime.Today;
+            if (tn.Insert())
+            {
+                MessageBox.Show("Data Inserted");
+                this.Close();
+                TraineeForm tnf = new TraineeForm();
+                tnf.Show();
+            }
+            else
+                MessageBox.Show("Something went wrong");
         }
 
         #region From Validation Code
@@ -101,5 +117,24 @@ namespace SaiYogaTraining.View
             this.errorProvider.SetError(this.tcontact, string.Empty);
         }
         #endregion
+
+        private void AdmissionForm_Load(object sender, EventArgs e)
+        {
+            var dict = Course.CourseList();
+            coursedrop.DataSource = new BindingSource(dict, null);
+            coursedrop.DisplayMember = "Value";
+            coursedrop.ValueMember = "Key";
+            coursedrop.SelectedIndex = 0;
+        }
+
+        private byte[] UploadImage(Image img)
+        {
+            MemoryStream tmpStream = new MemoryStream();
+            img.Save(tmpStream, img.RawFormat);
+            tmpStream.Seek(0, SeekOrigin.Begin);
+            byte[] imgbyte = new byte[tmpStream.Length];
+            tmpStream.Read(imgbyte, 0, (int)tmpStream.Length);
+            return imgbyte;
+        }
     }
 }
