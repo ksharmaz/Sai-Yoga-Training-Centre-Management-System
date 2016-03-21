@@ -76,16 +76,16 @@
             // 
             // contacttxt
             // 
-            this.contacttxt.Location = new System.Drawing.Point(215, 152);
+            this.contacttxt.Location = new System.Drawing.Point(215, 169);
             this.contacttxt.Size = new System.Drawing.Size(426, 27);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(138, 155);
+            this.label5.Location = new System.Drawing.Point(138, 172);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(138, 208);
+            this.label4.Location = new System.Drawing.Point(138, 225);
             // 
             // label3
             // 
@@ -95,16 +95,16 @@
             // 
             // nametxt
             // 
-            this.nametxt.Location = new System.Drawing.Point(215, 99);
+            this.nametxt.Location = new System.Drawing.Point(215, 116);
             this.nametxt.Size = new System.Drawing.Size(426, 27);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(138, 102);
+            this.label2.Location = new System.Drawing.Point(138, 119);
             // 
             // addresstxt
             // 
-            this.addresstxt.Location = new System.Drawing.Point(215, 205);
+            this.addresstxt.Location = new System.Drawing.Point(215, 222);
             this.addresstxt.Size = new System.Drawing.Size(426, 67);
             // 
             // banner
@@ -117,7 +117,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(138, 48);
+            this.label6.Location = new System.Drawing.Point(138, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 20);
             this.label6.TabIndex = 11;
@@ -127,7 +127,7 @@
             // 
             this.teacherIDList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.teacherIDList.FormattingEnabled = true;
-            this.teacherIDList.Location = new System.Drawing.Point(225, 45);
+            this.teacherIDList.Location = new System.Drawing.Point(225, 62);
             this.teacherIDList.Name = "teacherIDList";
             this.teacherIDList.Size = new System.Drawing.Size(416, 28);
             this.teacherIDList.TabIndex = 12;
@@ -137,7 +137,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(138, 297);
+            this.label7.Location = new System.Drawing.Point(138, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 20);
             this.label7.TabIndex = 13;
@@ -166,7 +166,7 @@
             "PhD Yoga",
             "D. Yoga & Rehabilitation",
             "Phil Counselling & Yoga Therapy"});
-            this.qualificationList.Location = new System.Drawing.Point(240, 294);
+            this.qualificationList.Location = new System.Drawing.Point(240, 311);
             this.qualificationList.Name = "qualificationList";
             this.qualificationList.Size = new System.Drawing.Size(401, 28);
             this.qualificationList.TabIndex = 14;

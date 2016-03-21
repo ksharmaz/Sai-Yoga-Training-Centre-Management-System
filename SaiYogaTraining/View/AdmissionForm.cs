@@ -53,12 +53,16 @@ namespace SaiYogaTraining.View
             tn.Contact = tcontact.Text.Trim();
             tn.CourseID = coursedrop.SelectedValue.ToString();
             tn.Date = DateTime.Today;
-            if (tn.Insert())
+            string str = tn.Insert();
+            if (!string.IsNullOrEmpty(str))
             {
                 MessageBox.Show("Data Inserted");
+                FeePayForm fee = new FeePayForm();
+                fee.id = str;
+                fee.formtype = "admission";
+                fee.lastBal = Course.GetCourseFee(tn.CourseID);
+                fee.Show();
                 this.Close();
-                TraineeForm tnf = new TraineeForm();
-                tnf.Show();
             }
             else
                 MessageBox.Show("Something went wrong");

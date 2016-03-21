@@ -93,5 +93,13 @@ namespace SaiYogaTraining.View
             if (tn.Update(tn.ID))
                 MessageBox.Show("Update Success");
         }
+
+        private void feebtn_Click(object sender, EventArgs e)
+        {
+            FeePayForm frm = new FeePayForm();
+            frm.id = tn.ID;
+            frm.formtype = "trainee";
+            frm.Show();
+        }
     }
 }

@@ -184,6 +184,7 @@
             this.feebtn.TabIndex = 16;
             this.feebtn.Text = "Submit Fee";
             this.feebtn.UseVisualStyleBackColor = true;
+            this.feebtn.Click += new System.EventHandler(this.feebtn_Click);
             // 
             // label8
             // 

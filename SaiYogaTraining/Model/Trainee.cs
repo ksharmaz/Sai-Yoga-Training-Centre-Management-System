@@ -101,13 +101,13 @@ namespace SaiYogaTraining.Model
             }
         }
 
-        public bool Insert()
+        public string Insert()
         {
             try
             {
                 var conn = GetConnect();
                 var query = @"INSERT INTO Trainee (tname, taddress, contact, enroll_date, course_id, image) "+
-                             "VALUES (@name, @address, @contact, @date, @course_id, @photo)";
+                             "VALUES (@name, @address, @contact, @date, @course_id, @photo);SELECT CAST(scope_identity() AS int)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(new SqlParameter("@name", this.Name));
                 cmd.Parameters.Add(new SqlParameter("@address", this.Address));
@@ -115,17 +115,21 @@ namespace SaiYogaTraining.Model
                 cmd.Parameters.Add(new SqlParameter("@date", this.Date));
                 cmd.Parameters.Add(new SqlParameter("@course_id", this.CourseID));
                 cmd.Parameters.Add(new SqlParameter("@photo", this.Photo));
-
-                int count = cmd.ExecuteNonQuery();
-                if (count > 0)
-                    return true;
+                int id = -1;
+                id = (int)cmd.ExecuteScalar();
+                if (id != -1)
+                    return id.ToString();
                 else
-                    return false;
+                    return null;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 throw;
+            }
+            finally
+            {
+                CloseConnect();
             }
         }
 

@@ -229,5 +229,33 @@ namespace SaiYogaTraining.Model
                 throw;
             }
         }
+
+        public static int GetCourseFee(string id)
+        {
+            int fee = 0;
+            try
+            {
+                var conn = GetConnect();
+                var query = "SELECT fee FROM Course WHERE course_id=@id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(new SqlParameter("@id", id));
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    fee = int.Parse(rdr["fee"].ToString());
+                }
+                return fee;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                //throw;
+                return fee;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }
