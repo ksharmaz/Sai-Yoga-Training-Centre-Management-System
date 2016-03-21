@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Data.SqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace SaiYogaTraining.Model
 {
@@ -87,6 +90,107 @@ namespace SaiYogaTraining.Model
             {
                 CloseConnect();
             }
+        }
+
+        public void GeneratePDF(FileStream fs)
+        {
+            Trainee tn = new Trainee();
+            tn.GetDetail(int.Parse(TraineeEnroll));
+            Document doc = new Document(PageSize.A4, 72, 72, 72, 180);
+            PdfWriter wrt = PdfWriter.GetInstance(doc, fs);
+            Font tFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.UNDERLINE);
+            Font pFont = new Font(Font.FontFamily.HELVETICA, 14, Font.NORMAL);
+            Font hFont = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
+            var title = new Paragraph("SAI YOGA TRAINING CENTRE RECEIPT", tFont);
+            var date = new Paragraph("Date: " + DateTime.Now.ToString("dd/MM/yyyy"), hFont);
+            title.Alignment = 1;
+            title.SpacingAfter = 20;
+            date.SpacingAfter = 10;
+            doc.Open();
+            doc.Add(Image.GetInstance(UploadImage(global::SaiYogaTraining.Properties.Resources.logo)));
+            doc.Add(title);
+            doc.Add(date);
+            doc.Add(new Paragraph("Enroll #: " + this.TraineeEnroll.ToString(), pFont));
+            doc.Add(new Paragraph("Name: " + tn.Name, pFont));
+            doc.Add(new Paragraph("Course: " + Course.GetCourseName(tn.CourseID), pFont));
+            doc.Add(new Paragraph("Paid Amount: " + this.PayAmt, pFont));
+            doc.Add(new Paragraph("Balance: " + this.Balance, pFont));
+            doc.Add(new Paragraph("Paid Amount(in words): " + NumbersToWords(this.PayAmt), pFont));
+            doc.Close();
+        }
+
+        public static string NumbersToWords(int inputNumber)
+        {
+            int inputNo = inputNumber;
+
+            if (inputNo == 0)
+                return "Zero";
+
+            int[] numbers = new int[4];
+            int first = 0;
+            int u, h, t;
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+            if (inputNo < 0)
+            {
+                sb.Append("Minus ");
+                inputNo = -inputNo;
+            }
+
+            string[] words0 = {"" ,"One ", "Two ", "Three ", "Four ",
+            "Five " ,"Six ", "Seven ", "Eight ", "Nine "};
+            string[] words1 = {"Ten ", "Eleven ", "Twelve ", "Thirteen ", "Fourteen ",
+            "Fifteen ","Sixteen ","Seventeen ","Eighteen ", "Nineteen "};
+            string[] words2 = {"Twenty ", "Thirty ", "Forty ", "Fifty ", "Sixty ",
+            "Seventy ","Eighty ", "Ninety "};
+            string[] words3 = { "Thousand ", "Lakh ", "Crore " };
+
+            numbers[0] = inputNo % 1000; // units
+            numbers[1] = inputNo / 1000;
+            numbers[2] = inputNo / 100000;
+            numbers[1] = numbers[1] - 100 * numbers[2]; // thousands
+            numbers[3] = inputNo / 10000000; // crores
+            numbers[2] = numbers[2] - 100 * numbers[3]; // lakhs
+
+            for (int i = 3; i > 0; i--)
+            {
+                if (numbers[i] != 0)
+                {
+                    first = i;
+                    break;
+                }
+            }
+            for (int i = first; i >= 0; i--)
+            {
+                if (numbers[i] == 0) continue;
+                u = numbers[i] % 10; // ones
+                t = numbers[i] / 10;
+                h = numbers[i] / 100; // hundreds
+                t = t - 10 * h; // tens
+                if (h > 0) sb.Append(words0[h] + "Hundred ");
+                if (u > 0 || t > 0)
+                {
+                    if (h > 0 || i == 0) sb.Append("and ");
+                    if (t == 0)
+                        sb.Append(words0[u]);
+                    else if (t == 1)
+                        sb.Append(words1[u]);
+                    else
+                        sb.Append(words2[t - 2] + words0[u]);
+                }
+                if (i != 0) sb.Append(words3[i - 1]);
+            }
+            return sb.ToString().TrimEnd();
+        }
+
+        private byte[] UploadImage(System.Drawing.Image img)
+        {
+            MemoryStream tmpStream = new MemoryStream();
+            img.Save(tmpStream, img.RawFormat);
+            tmpStream.Seek(0, SeekOrigin.Begin);
+            byte[] imgbyte = new byte[tmpStream.Length];
+            tmpStream.Read(imgbyte, 0, (int)tmpStream.Length);
+            return imgbyte;
         }
     }
 }

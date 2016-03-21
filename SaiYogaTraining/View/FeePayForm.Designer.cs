@@ -149,7 +149,7 @@
             this.datetxt.Name = "datetxt";
             this.datetxt.Size = new System.Drawing.Size(274, 27);
             this.datetxt.TabIndex = 9;
-            this.datetxt.Value = new System.DateTime(2016, 3, 21, 0, 0, 0, 0);
+            this.datetxt.Value = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
             // 
             // typetxt
             // 
@@ -174,6 +174,7 @@
             this.receiptbtn.TabIndex = 11;
             this.receiptbtn.Text = "Generate Receipt";
             this.receiptbtn.UseVisualStyleBackColor = true;
+            this.receiptbtn.Click += new System.EventHandler(this.receiptbtn_Click);
             // 
             // paybtn
             // 

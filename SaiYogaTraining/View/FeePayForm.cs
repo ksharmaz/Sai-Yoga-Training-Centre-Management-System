@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using SaiYogaTraining.Model;
 using SaiYogaTraining.View._Partials;
@@ -31,6 +32,8 @@ namespace SaiYogaTraining.View
                 this.Close();
             }
             typetxt.SelectedIndex = 0;
+            datetxt.MaxDate = DateTime.Today;
+            datetxt.Text = DateTime.Today.ToShortDateString();
             if (formtype.Equals("trainee"))
             {
                 fee = new Fee();
@@ -83,6 +86,20 @@ namespace SaiYogaTraining.View
             this.remarkstxt.Enabled = false;
             this.paybtn.Enabled = false;
             this.receiptbtn.Enabled = true;
+        }
+
+        private void receiptbtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "PDF Document File | *.pdf";
+            dialog.DefaultExt = ".pdf";
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = new FileStream(dialog.FileName, FileMode.Create);
+                fee.GeneratePDF(fs);
+                MessageBox.Show("PDF Generated");
+            }
+            
         }
     }
 }

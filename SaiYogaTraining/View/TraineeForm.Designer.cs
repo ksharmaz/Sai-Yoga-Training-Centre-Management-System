@@ -178,11 +178,11 @@
             // 
             // feebtn
             // 
-            this.feebtn.Location = new System.Drawing.Point(547, 376);
+            this.feebtn.Location = new System.Drawing.Point(569, 376);
             this.feebtn.Name = "feebtn";
-            this.feebtn.Size = new System.Drawing.Size(104, 30);
+            this.feebtn.Size = new System.Drawing.Size(113, 30);
             this.feebtn.TabIndex = 16;
-            this.feebtn.Text = "Submit Fee";
+            this.feebtn.Text = "Manage Fee";
             this.feebtn.UseVisualStyleBackColor = true;
             this.feebtn.Click += new System.EventHandler(this.feebtn_Click);
             // 
