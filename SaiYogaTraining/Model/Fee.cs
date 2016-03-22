@@ -101,13 +101,13 @@ namespace SaiYogaTraining.Model
             Font tFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.UNDERLINE);
             Font pFont = new Font(Font.FontFamily.HELVETICA, 14, Font.NORMAL);
             Font hFont = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
-            var title = new Paragraph("SAI YOGA TRAINING CENTRE RECEIPT", tFont);
+            var title = new Paragraph("FEE PAYMENT RECEIPT", tFont);
             var date = new Paragraph("Date: " + DateTime.Now.ToString("dd/MM/yyyy"), hFont);
             title.Alignment = 1;
             title.SpacingAfter = 20;
             date.SpacingAfter = 10;
             doc.Open();
-            doc.Add(Image.GetInstance(UploadImage(global::SaiYogaTraining.Properties.Resources.logo)));
+            doc.Add(Image.GetInstance(UploadImage(global::SaiYogaTraining.Properties.Resources.reciept_logo)));
             doc.Add(title);
             doc.Add(date);
             doc.Add(new Paragraph("Enroll #: " + this.TraineeEnroll.ToString(), pFont));
@@ -115,7 +115,7 @@ namespace SaiYogaTraining.Model
             doc.Add(new Paragraph("Course: " + Course.GetCourseName(tn.CourseID), pFont));
             doc.Add(new Paragraph("Paid Amount: " + this.PayAmt, pFont));
             doc.Add(new Paragraph("Balance: " + this.Balance, pFont));
-            doc.Add(new Paragraph("Paid Amount(in words): " + NumbersToWords(this.PayAmt), pFont));
+            doc.Add(new Paragraph("Paid Amount(in words): " + NumbersToWords(this.PayAmt) + " only.", pFont));
             doc.Close();
         }
 
