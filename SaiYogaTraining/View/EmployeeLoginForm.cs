@@ -59,5 +59,11 @@ namespace SaiYogaTraining.View
             TraineeForm tfm = new TraineeForm();
             tfm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TeacherForm tfm = new TeacherForm();
+            tfm.Show();
+        }
     }
 }

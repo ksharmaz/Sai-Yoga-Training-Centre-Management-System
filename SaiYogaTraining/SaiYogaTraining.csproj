@@ -71,6 +71,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Fee.cs" />
     <Compile Include="Model\Login.cs" />
+    <Compile Include="Model\Schedule.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Teacher.cs" />
     <Compile Include="Model\Trainee.cs" />
