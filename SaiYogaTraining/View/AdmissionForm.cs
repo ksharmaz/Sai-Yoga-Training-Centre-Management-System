@@ -60,7 +60,7 @@ namespace SaiYogaTraining.View
                 FeePayForm fee = new FeePayForm();
                 fee.id = str;
                 fee.formtype = "admission";
-                fee.lastBal = Course.GetCourseFee(tn.CourseID);
+                fee.lastBal = crs.GetCourseFee(tn.CourseID);
                 fee.Show();
                 this.Close();
             }
@@ -124,7 +124,7 @@ namespace SaiYogaTraining.View
 
         private void AdmissionForm_Load(object sender, EventArgs e)
         {
-            var dict = Course.CourseList();
+            var dict = crs.CourseList();
             if(dict.Count > 0)
             {
                 coursedrop.DataSource = new BindingSource(dict, null);

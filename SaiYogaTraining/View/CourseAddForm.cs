@@ -12,7 +12,7 @@ namespace SaiYogaTraining.View
 {
     public partial class CourseAddForm : GlobalForm
     {
-        private Course crs;
+        private crs crs;
         private string cID;
 
         public CourseAddForm()
@@ -22,7 +22,7 @@ namespace SaiYogaTraining.View
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
-            crs = new Course();
+            crs = new crs();
             FillData(crs);
             bool insert = crs.AddCourse();
             if (insert)
@@ -33,7 +33,7 @@ namespace SaiYogaTraining.View
         {
             this.courseDuration.SelectedIndex = 0;
             this.courseType.SelectedIndex = 0;
-            crs = new Course();
+            crs = new crs();
             var list = crs.IDList();
             foreach(var lst in list)
             {
@@ -41,7 +41,7 @@ namespace SaiYogaTraining.View
             }
         }
 
-        private void FillData(Course crs)
+        private void FillData(crs crs)
         {
             crs.CourseName = this.courseName.Text;
             crs.Duration = this.courseDuration.SelectedItem.ToString();
@@ -54,7 +54,7 @@ namespace SaiYogaTraining.View
         {
             if (!string.IsNullOrWhiteSpace(crs.CourseID))
             {
-                crs = new Course();
+                crs = new crs();
                 FillData(crs);
                 if(crs.UpdateCourse(cID))
                 MessageBox.Show("Data Update Successfull");
@@ -66,7 +66,7 @@ namespace SaiYogaTraining.View
 
         private void courseID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            crs = new Course();
+            crs = new crs();
             crs.GetDetail(courseID.SelectedItem.ToString());
             FillFormData();
             cID = courseID.SelectedItem.ToString();
@@ -83,7 +83,7 @@ namespace SaiYogaTraining.View
 
         private void delbtn_Click(object sender, EventArgs e)
         {
-            crs = new Course();
+            crs = new crs();
             if (crs.Delete(cID))
             {
                 MessageBox.Show("Data Deleted");

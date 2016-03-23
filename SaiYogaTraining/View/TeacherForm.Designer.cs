@@ -125,7 +125,8 @@
             // 
             // teacherIDList
             // 
-            this.teacherIDList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.teacherIDList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.teacherIDList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.teacherIDList.FormattingEnabled = true;
             this.teacherIDList.Location = new System.Drawing.Point(225, 62);
             this.teacherIDList.Name = "teacherIDList";

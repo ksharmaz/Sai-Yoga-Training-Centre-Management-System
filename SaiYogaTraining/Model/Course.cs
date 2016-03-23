@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace SaiYogaTraining.Model
 {
-    class Course : Connection
+    class crs : Connection
     {
 
         public string CourseID { get; set; }

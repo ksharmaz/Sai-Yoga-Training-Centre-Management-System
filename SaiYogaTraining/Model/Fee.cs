@@ -112,7 +112,7 @@ namespace SaiYogaTraining.Model
             doc.Add(date);
             doc.Add(new Paragraph("Enroll #: " + this.TraineeEnroll.ToString(), pFont));
             doc.Add(new Paragraph("Name: " + tn.Name, pFont));
-            doc.Add(new Paragraph("Course: " + Course.GetCourseName(tn.CourseID), pFont));
+            doc.Add(new Paragraph("Course: " + crs.GetCourseName(tn.CourseID), pFont));
             doc.Add(new Paragraph("Paid Amount: " + this.PayAmt, pFont));
             doc.Add(new Paragraph("Balance: " + this.Balance, pFont));
             doc.Add(new Paragraph("Paid Amount(in words): " + NumbersToWords(this.PayAmt) + " only.", pFont));

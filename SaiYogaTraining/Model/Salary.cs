@@ -12,7 +12,6 @@ namespace SaiYogaTraining.Model
         public int TotalNoHrs { get; set; }
         public int ChargesPerHrs { get; set; }
         public int Total { get; set; }
-        public DateTime PayDate { get; set; }
         public string TeacherID { get; set; }
 
         public void CalculateTotalHrs(string tID)
@@ -30,7 +29,7 @@ namespace SaiYogaTraining.Model
                 {
                     lastDate = Convert.ToDateTime(rdr["pay_date"].ToString());
                 }
-
+                rdr.Close();
                 if (lastDate.Equals(null))
                 {
                     int count = 0;
@@ -40,21 +39,22 @@ namespace SaiYogaTraining.Model
                     rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        count = int.Parse(rdr["hrs_per_day"].ToString());
+                        count += int.Parse(rdr["hrs_per_day"].ToString());
                     }
                     this.TotalNoHrs = count;
+                    rdr.Close();
                 }
                 else
                 {
                     int count = 0;
-                    query = @"SELECT hrs_per_day FROM TeacherAttendance WHERE teacher_id = @id AND tadate > CDate('@date')";
+                    query = @"SELECT hrs_per_day FROM TeacherAttendance WHERE teacher_id = @id AND tadate > @date";
                     cmd = new SqlCommand(query, conn);
                     cmd.Parameters.Add(new SqlParameter("@date", lastDate));
                     cmd.Parameters.Add(new SqlParameter("@id", tID));
                     rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        count = int.Parse(rdr["hrs_per_day"].ToString());
+                        count += int.Parse(rdr["hrs_per_day"].ToString());
                     }
                     this.TotalNoHrs = count;
                 }
@@ -73,6 +73,35 @@ namespace SaiYogaTraining.Model
         public int CalculateTotal()
         {
             return this.TotalNoHrs * this.ChargesPerHrs;
+        }
+
+        public bool Insert()
+        {
+            try
+            {
+                var conn = GetConnect();
+                var query = @"INSERT INTO Salary (total_no_hrs, charges_per_hrs, total, pay_date, teacher_id) VALUES "+
+                    "(@totalhrs, @chargehrs, @total, getdate(), @id)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(new SqlParameter("@totalhrs",this.TotalNoHrs));
+                cmd.Parameters.Add(new SqlParameter("@chargehrs",this.ChargesPerHrs));
+                cmd.Parameters.Add(new SqlParameter("@total", this.Total));
+                cmd.Parameters.Add(new SqlParameter("@id",this.TeacherID));
+                int count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+            finally
+            {
+                CloseConnect();
+            }
         }
     }
 }

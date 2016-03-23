@@ -57,7 +57,7 @@ namespace SaiYogaTraining.View
             MemoryStream ms = new MemoryStream(tn.Photo, 0, tn.Photo.Length);
             ms.Position = 0;
             this.imgbox.Image = Image.FromStream(ms, true);
-            this.coursetxt.Text = Course.GetCourseName(tn.CourseID);
+            this.coursetxt.Text = crs.GetCourseName(tn.CourseID);
             this.datetimectrl.Value = tn.Date;
             
         }

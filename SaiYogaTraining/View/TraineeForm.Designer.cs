@@ -158,9 +158,10 @@
             // 
             // idSelector
             // 
-            this.idSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idSelector.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.idSelector.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.idSelector.FormattingEnabled = true;
-            this.idSelector.Location = new System.Drawing.Point(509, 279);
+            this.idSelector.Location = new System.Drawing.Point(534, 279);
             this.idSelector.Name = "idSelector";
             this.idSelector.Size = new System.Drawing.Size(188, 28);
             this.idSelector.TabIndex = 14;
@@ -170,7 +171,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(551, 255);
+            this.label7.Location = new System.Drawing.Point(576, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 15;
