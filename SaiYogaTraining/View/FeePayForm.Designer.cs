@@ -192,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 466);
             this.Name = "FeePayForm";
-            this.Text = "FeePayForm";
+            this.Text = "Sai Yoga Training - Fee Payment";
             this.Load += new System.EventHandler(this.FeePayForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -73,6 +73,16 @@ namespace SaiYogaTraining.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attendance_icon {
+            get {
+                object obj = ResourceManager.GetObject("attendance-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_bookmark_icon {
             get {
                 object obj = ResourceManager.GetObject("book_bookmark_icon", resourceCulture);
@@ -83,9 +93,59 @@ namespace SaiYogaTraining.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clock_icon {
+            get {
+                object obj = ResourceManager.GetObject("clock-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_text_icon {
+            get {
+                object obj = ResourceManager.GetObject("file-text-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap keyring_icon {
             get {
                 object obj = ResourceManager.GetObject("keyring_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kids_slide {
+            get {
+                object obj = ResourceManager.GetObject("kids-slide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layers_icon {
+            get {
+                object obj = ResourceManager.GetObject("layers-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layers_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("layers-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +206,16 @@ namespace SaiYogaTraining.Properties {
         internal static System.Drawing.Bitmap sign_error_icon {
             get {
                 object obj = ResourceManager.GetObject("sign_error_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_female_alt_icon {
+            get {
+                object obj = ResourceManager.GetObject("user-female-alt-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

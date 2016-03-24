@@ -80,6 +80,11 @@
     <Compile Include="Model\Trainee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaiYogaDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaiYogaDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\AddScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +102,18 @@
     </Compile>
     <Compile Include="View\AdmissionForm.Designer.cs">
       <DependentUpon>AdmissionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AttendencePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AttendencePageForm.Designer.cs">
+      <DependentUpon>AttendencePageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CheckScheduleForm.Designer.cs">
+      <DependentUpon>CheckScheduleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CourseAddForm.cs">
       <SubType>Form</SubType>
@@ -122,11 +139,29 @@
     <Compile Include="View\SalaryPayForm.Designer.cs">
       <DependentUpon>SalaryPayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TeacherAttendenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherAttendenceForm.Designer.cs">
+      <DependentUpon>TeacherAttendenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TeacherForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\TeacherForm.Designer.cs">
       <DependentUpon>TeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeacherPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TeacherPageForm.Designer.cs">
+      <DependentUpon>TeacherPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TraineeAttendenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TraineeAttendenceForm.Designer.cs">
+      <DependentUpon>TraineeAttendenceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TraineeForm.cs">
       <SubType>Form</SubType>
@@ -173,14 +208,29 @@
     <EmbeddedResource Include="View\AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AttendencePageForm.resx">
+      <DependentUpon>AttendencePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CheckScheduleForm.resx">
+      <DependentUpon>CheckScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FeePayForm.resx">
       <DependentUpon>FeePayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SalaryPayForm.resx">
       <DependentUpon>SalaryPayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\TeacherAttendenceForm.resx">
+      <DependentUpon>TeacherAttendenceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TeacherForm.resx">
       <DependentUpon>TeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TeacherPageForm.resx">
+      <DependentUpon>TeacherPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TraineeAttendenceForm.resx">
+      <DependentUpon>TraineeAttendenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\_Partials\PopupForm.resx">
       <DependentUpon>PopupForm.cs</DependentUpon>
@@ -228,7 +278,9 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +290,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SaiYogaDBDataSet3.xsc">
+      <DependentUpon>SaiYogaDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SaiYogaDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaiYogaDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaiYogaDBDataSet3.xss">
+      <DependentUpon>SaiYogaDBDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
@@ -300,6 +363,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reciept_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layers-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layers-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-text-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-female-alt-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kids-slide.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

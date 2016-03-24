@@ -165,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 399);
             this.Name = "AddScheduleForm";
-            this.Text = "AddScheduleForm";
+            this.Text = "Sai Yoga Training - Add Schedule";
             this.Load += new System.EventHandler(this.AddScheduleForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

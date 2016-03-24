@@ -192,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 422);
             this.Name = "SalaryPayForm";
-            this.Text = "SalaryPayForm";
+            this.Text = "Sai Yoga Training - Salary Pay";
             this.Load += new System.EventHandler(this.SalaryPayForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

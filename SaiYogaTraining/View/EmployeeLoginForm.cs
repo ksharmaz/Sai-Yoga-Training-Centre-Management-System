@@ -43,8 +43,7 @@ namespace SaiYogaTraining.View
 
         private void admissionbtn_Click(object sender, EventArgs e)
         {
-            AdmissionForm admission = new AdmissionForm();
-            admission.Show();
+            (new AdmissionForm()).Show();
         }
 
         private void courseBtn_Click(object sender, EventArgs e)
@@ -56,14 +55,17 @@ namespace SaiYogaTraining.View
 
         private void traineebtn_Click(object sender, EventArgs e)
         {
-            TraineeForm tfm = new TraineeForm();
-            tfm.Show();
+            (new TraineeForm()).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TeacherForm tfm = new TeacherForm();
-            tfm.Show();
+            (new TeacherPageForm()).Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            (new AttendencePageForm()).Show();
         }
     }
 }

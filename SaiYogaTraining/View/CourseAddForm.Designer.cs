@@ -45,9 +45,11 @@
             this.courseName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.submitbtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -247,18 +249,33 @@
             this.submitbtn.UseVisualStyleBackColor = true;
             this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SaiYogaTraining.Properties.Resources.layers_icon1;
+            this.pictureBox1.Location = new System.Drawing.Point(731, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // CourseAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 640);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "CourseAddForm";
-            this.Text = "CourseAddForm";
+            this.Text = "Sai Yoga Training - Manage Course";
             this.Load += new System.EventHandler(this.CourseAddForm_Load);
+            this.Controls.SetChildIndex(this.banner, 0);
+            this.Controls.SetChildIndex(this.mainPanel, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.mainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +300,6 @@
         private System.Windows.Forms.Button delbtn;
         private System.Windows.Forms.ComboBox courseID;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

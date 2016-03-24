@@ -16,7 +16,7 @@ namespace SaiYogaTraining.Model
             try
             {
                 var conn = GetConnect();
-                var query = @"INSERT INTO TeacherAttendence (tdate, status, hrs_per_day, teacher_id) " +
+                var query = @"INSERT INTO TeacherAttendance (tadate, status, hrs_per_day, teacher_id) " +
                     "(SELECT getdate(), 'Absent', '0', teacher_id FROM Teacher)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 int count = cmd.ExecuteNonQuery();

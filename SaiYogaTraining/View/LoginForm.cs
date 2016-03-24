@@ -32,11 +32,8 @@ namespace SaiYogaTraining.View
                 {
                     if (log.loginType.Equals("administrator"))
                         CreateNewForm(OpenAdminForm);
-                    else if (log.loginType.Equals("employee") || log.loginType.Equals("teacher"))
+                    else if (log.loginType.Equals("employee"))
                     {
-                        if (log.loginType.Equals("teacher"))
-                            Console.WriteLine(); //TODO: Teacher form
-                        else
                             CreateNewForm(OpenEmployForm);
                     }
                         

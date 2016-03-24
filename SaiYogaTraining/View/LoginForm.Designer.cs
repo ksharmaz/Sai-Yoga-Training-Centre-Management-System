@@ -35,10 +35,9 @@
             this.usrtxt = new System.Windows.Forms.TextBox();
             this.passwdtxt = new System.Windows.Forms.TextBox();
             this.typegrp = new System.Windows.Forms.GroupBox();
+            this.loginbtn = new System.Windows.Forms.Button();
             this.employ = new System.Windows.Forms.RadioButton();
             this.admin = new System.Windows.Forms.RadioButton();
-            this.loginbtn = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.typegrp.SuspendLayout();
@@ -46,15 +45,14 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.linkLabel1);
             this.mainPanel.Controls.Add(this.loginbtn);
-            this.mainPanel.Controls.Add(this.typegrp);
             this.mainPanel.Controls.Add(this.passwdtxt);
             this.mainPanel.Controls.Add(this.usrtxt);
             this.mainPanel.Controls.Add(this.passwdlbl);
             this.mainPanel.Controls.Add(this.usrlbl);
             this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.typegrp);
             this.mainPanel.Location = new System.Drawing.Point(-16, 135);
             this.mainPanel.Size = new System.Drawing.Size(1104, 563);
             // 
@@ -127,12 +125,25 @@
             this.typegrp.Controls.Add(this.employ);
             this.typegrp.Controls.Add(this.admin);
             this.typegrp.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typegrp.Location = new System.Drawing.Point(180, 278);
+            this.typegrp.Location = new System.Drawing.Point(985, 432);
             this.typegrp.Name = "typegrp";
             this.typegrp.Size = new System.Drawing.Size(392, 119);
             this.typegrp.TabIndex = 6;
             this.typegrp.TabStop = false;
             this.typegrp.Text = "Login As";
+            this.typegrp.Visible = false;
+            // 
+            // loginbtn
+            // 
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginbtn.Location = new System.Drawing.Point(304, 298);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Size = new System.Drawing.Size(100, 37);
+            this.loginbtn.TabIndex = 7;
+            this.loginbtn.Text = "Login";
+            this.loginbtn.UseVisualStyleBackColor = true;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
             // 
             // employ
             // 
@@ -158,37 +169,12 @@
             this.admin.Text = "administrator";
             this.admin.UseVisualStyleBackColor = true;
             // 
-            // loginbtn
-            // 
-            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginbtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginbtn.Location = new System.Drawing.Point(457, 457);
-            this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(100, 37);
-            this.loginbtn.TabIndex = 7;
-            this.loginbtn.Text = "Login";
-            this.loginbtn.UseVisualStyleBackColor = true;
-            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.linkLabel1.Location = new System.Drawing.Point(720, 393);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(165, 25);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot Password ?";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 692);
-            this.Name = "Login";
+            this.ClientSize = new System.Drawing.Size(1021, 643);
+            this.Name = "LoginForm";
             this.Text = "Sai Yoga Training Centre - Login Form";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
@@ -212,6 +198,5 @@
         private System.Windows.Forms.RadioButton employ;
         private System.Windows.Forms.RadioButton admin;
         private System.Windows.Forms.Button loginbtn;
-        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -28,7 +28,7 @@ namespace SaiYogaTraining.View
         {
             if (Emp.Type.Equals("employee"))
             {
-                addCourseBtn.Enabled = false;
+                addCourseBtn.Enabled = true;
             }
         }
 
@@ -89,6 +89,16 @@ namespace SaiYogaTraining.View
         {
             CourseAddForm crs = new CourseAddForm();
             crs.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (new AddScheduleForm()).Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (new CheckScheduleForm()).Show();
         }
     }
 }

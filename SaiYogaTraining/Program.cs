@@ -16,7 +16,7 @@ namespace SaiYogaTraining
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CourseAddForm());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -33,9 +33,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.qualificationList = new System.Windows.Forms.ComboBox();
             this.addTeacher = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,19 +184,34 @@
             this.addTeacher.UseVisualStyleBackColor = true;
             this.addTeacher.Click += new System.EventHandler(this.addTeacher_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SaiYogaTraining.Properties.Resources.user_female_alt_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(764, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 661);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "TeacherForm";
-            this.Text = "TeacherForm";
+            this.Text = "Sai Yoga Training - Manage Teacher";
             this.Load += new System.EventHandler(this.TeacherForm_Load);
+            this.Controls.SetChildIndex(this.banner, 0);
+            this.Controls.SetChildIndex(this.mainPanel, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +224,6 @@
         private System.Windows.Forms.Button addTeacher;
         private System.Windows.Forms.ComboBox qualificationList;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
