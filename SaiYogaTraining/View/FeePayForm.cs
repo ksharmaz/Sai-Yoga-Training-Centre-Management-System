@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using SaiYogaTraining.Model;
 using SaiYogaTraining.View._Partials;
@@ -100,6 +101,23 @@ namespace SaiYogaTraining.View
                 MessageBox.Show("PDF Generated");
             }
             
+        }
+
+        private void amttxt_Validating(object sender, CancelEventArgs e)
+        {
+            bool cancel = false;
+            Match match = Regex.Match(this.amttxt.Text, "^[0-9]*$");
+            if (!match.Success || string.IsNullOrEmpty(this.amttxt.Text))
+            {
+                this.errorProvider.SetError(this.amttxt, "Please enter number between 0 to 9!");
+                cancel = true;
+            }
+            e.Cancel = cancel;
+        }
+
+        private void amttxt_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider.SetError(this.amttxt, string.Empty);
         }
     }
 }

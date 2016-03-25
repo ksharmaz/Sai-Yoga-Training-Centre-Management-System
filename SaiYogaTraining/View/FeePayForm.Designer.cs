@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeePayForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +43,10 @@
             this.typetxt = new System.Windows.Forms.ComboBox();
             this.receiptbtn = new System.Windows.Forms.Button();
             this.paybtn = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -132,6 +136,8 @@
             this.amttxt.Name = "amttxt";
             this.amttxt.Size = new System.Drawing.Size(274, 27);
             this.amttxt.TabIndex = 7;
+            this.amttxt.Validating += new System.ComponentModel.CancelEventHandler(this.amttxt_Validating);
+            this.amttxt.Validated += new System.EventHandler(this.amttxt_Validated);
             // 
             // remarkstxt
             // 
@@ -186,6 +192,11 @@
             this.paybtn.UseVisualStyleBackColor = true;
             this.paybtn.Click += new System.EventHandler(this.paybtn_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
             // FeePayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +208,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button paybtn;
         private System.Windows.Forms.Button receiptbtn;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

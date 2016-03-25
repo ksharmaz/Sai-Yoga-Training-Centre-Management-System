@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addresstxt = new System.Windows.Forms.RichTextBox();
@@ -40,9 +42,11 @@
             this.nametxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -91,6 +95,8 @@
             this.addresstxt.Size = new System.Drawing.Size(212, 96);
             this.addresstxt.TabIndex = 10;
             this.addresstxt.Text = "";
+            this.addresstxt.Validating += new System.ComponentModel.CancelEventHandler(this.addresstxt_Validating);
+            this.addresstxt.Validated += new System.EventHandler(this.addresstxt_Validated);
             // 
             // delbtn
             // 
@@ -116,6 +122,8 @@
             this.contacttxt.Name = "contacttxt";
             this.contacttxt.Size = new System.Drawing.Size(212, 27);
             this.contacttxt.TabIndex = 6;
+            this.contacttxt.Validating += new System.ComponentModel.CancelEventHandler(this.contacttxt_Validating);
+            this.contacttxt.Validated += new System.EventHandler(this.contacttxt_Validated);
             // 
             // label5
             // 
@@ -153,6 +161,8 @@
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(212, 27);
             this.nametxt.TabIndex = 1;
+            this.nametxt.Validating += new System.ComponentModel.CancelEventHandler(this.nametxt_Validating);
+            this.nametxt.Validated += new System.EventHandler(this.nametxt_Validated);
             // 
             // label2
             // 
@@ -174,6 +184,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name*";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
             // DetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +201,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +221,6 @@
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.RichTextBox addresstxt;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

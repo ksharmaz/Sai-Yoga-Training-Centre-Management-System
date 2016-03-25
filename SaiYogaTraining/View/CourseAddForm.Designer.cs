@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAddForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.courseFee = new System.Windows.Forms.TextBox();
@@ -42,10 +44,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.submitbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -92,6 +96,8 @@
             this.courseFee.Name = "courseFee";
             this.courseFee.Size = new System.Drawing.Size(231, 27);
             this.courseFee.TabIndex = 10;
+            this.courseFee.Validating += new System.ComponentModel.CancelEventHandler(this.courseFee_Validating);
+            this.courseFee.Validated += new System.EventHandler(this.courseFee_Validated);
             // 
             // label5
             // 
@@ -181,6 +187,8 @@
             this.courseName.Name = "courseName";
             this.courseName.Size = new System.Drawing.Size(231, 27);
             this.courseName.TabIndex = 2;
+            this.courseName.Validating += new System.ComponentModel.CancelEventHandler(this.courseName_Validating);
+            this.courseName.Validated += new System.EventHandler(this.courseName_Validated);
             // 
             // label1
             // 
@@ -212,6 +220,11 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
             // CourseAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +242,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +264,6 @@
         private System.Windows.Forms.TextBox courseFee;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

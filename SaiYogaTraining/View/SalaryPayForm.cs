@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using SaiYogaTraining.Model;
 using SaiYogaTraining.View._Partials;
+using System.Text.RegularExpressions;
 
 namespace SaiYogaTraining.View
 {
@@ -75,6 +76,23 @@ namespace SaiYogaTraining.View
             else
                 MessageBox.Show("Something went wrong");
             this.Close();
+        }
+
+        private void chrgtxt_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider.SetError(this.chrgtxt, string.Empty);
+        }
+
+        private void chrgtxt_Validating(object sender, CancelEventArgs e)
+        {
+            bool cancel = false;
+            Match match = Regex.Match(this.chrgtxt.Text, "^[0-9]*$");
+            if (!match.Success || string.IsNullOrEmpty(this.chrgtxt.Text))
+            {
+                this.errorProvider.SetError(this.chrgtxt, "Please enter number between 0 to 9!");
+                cancel = true;
+            }
+            e.Cancel = cancel;
         }
     }
 }

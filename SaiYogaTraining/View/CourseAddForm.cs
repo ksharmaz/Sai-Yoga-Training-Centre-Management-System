@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SaiYogaTraining.Model;
+using System.Text.RegularExpressions;
 
 namespace SaiYogaTraining.View
 {
@@ -41,6 +42,40 @@ namespace SaiYogaTraining.View
             crs.CType = this.courseType.SelectedItem.ToString().Trim();
             crs.Benefits = this.courseBenefits.Text.Trim();
             crs.Fee = int.Parse(this.courseFee.Text.Trim());
+        }
+
+        private void courseName_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider.SetError(this.courseName, string.Empty);
+        }
+
+        private void courseName_Validating(object sender, CancelEventArgs e)
+        {
+            bool cancel = false;
+            if (string.IsNullOrEmpty(this.courseName.Text))
+            {
+                //This control fails validation: Name cannot be empty.
+                cancel = true;
+                this.errorProvider.SetError(this.courseName, "Mandatory Field!");
+            }
+            e.Cancel = cancel;
+        }
+
+        private void courseFee_Validated(object sender, EventArgs e)
+        {
+            this.errorProvider.SetError(this.courseFee, string.Empty);
+        }
+
+        private void courseFee_Validating(object sender, CancelEventArgs e)
+        {
+            bool cancel = false;
+            Match match = Regex.Match(this.courseFee.Text, "^[0-9]*$");
+            if (!match.Success || string.IsNullOrEmpty(this.courseFee.Text))
+            {
+                this.errorProvider.SetError(this.courseFee, "Please enter number between 0 to 9!");
+                cancel = true;
+            }
+            e.Cancel = cancel;
         }
     }
 }

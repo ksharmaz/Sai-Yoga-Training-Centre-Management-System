@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalaryPayForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +43,10 @@
             this.totaltxt = new System.Windows.Forms.TextBox();
             this.paybtn = new System.Windows.Forms.Button();
             this.cancelbtn = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -153,6 +157,8 @@
             this.chrgtxt.Size = new System.Drawing.Size(202, 27);
             this.chrgtxt.TabIndex = 9;
             this.chrgtxt.TextChanged += new System.EventHandler(this.chrgtxt_TextChanged);
+            this.chrgtxt.Validating += new System.ComponentModel.CancelEventHandler(this.chrgtxt_Validating);
+            this.chrgtxt.Validated += new System.EventHandler(this.chrgtxt_Validated);
             // 
             // totaltxt
             // 
@@ -186,6 +192,11 @@
             this.cancelbtn.UseVisualStyleBackColor = true;
             this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider.Icon")));
+            // 
             // SalaryPayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +208,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +228,6 @@
         private System.Windows.Forms.TextBox totalhrstxt;
         private System.Windows.Forms.Button paybtn;
         private System.Windows.Forms.Button cancelbtn;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
