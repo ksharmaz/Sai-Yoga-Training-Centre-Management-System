@@ -219,7 +219,7 @@
             this.ClientSize = new System.Drawing.Size(967, 640);
             this.Controls.Add(this.pictureBox1);
             this.Name = "CourseAddForm";
-            this.Text = "Sai Yoga Training - Manage Course";
+            this.Text = "Sai Yoga Training - Add Course";
             this.Load += new System.EventHandler(this.CourseAddForm_Load);
             this.Controls.SetChildIndex(this.banner, 0);
             this.Controls.SetChildIndex(this.mainPanel, 0);

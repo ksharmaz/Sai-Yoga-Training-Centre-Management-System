@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.resultPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.resultView = new System.Windows.Forms.DataGridView();
+            this.status = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TakeBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.courseSelect = new System.Windows.Forms.Label();
             this.courseTrainee = new System.Windows.Forms.ComboBox();
             this.selectBtn = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.resultPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             this.mainPanel.Controls.Add(this.courseSelect);
             this.mainPanel.Controls.Add(this.cancelBtn);
             this.mainPanel.Controls.Add(this.TakeBtn);
-            this.mainPanel.Controls.Add(this.panel1);
+            this.mainPanel.Controls.Add(this.resultPanel);
             this.mainPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // banner
@@ -57,14 +58,15 @@
             this.banner.Size = new System.Drawing.Size(584, 72);
             this.banner.Text = "Trainee Attendence";
             // 
-            // panel1
+            // resultPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(179, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 369);
-            this.panel1.TabIndex = 2;
+            this.resultPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(118)))), ((int)(((byte)(77)))));
+            this.resultPanel.Controls.Add(this.panel2);
+            this.resultPanel.Location = new System.Drawing.Point(179, 53);
+            this.resultPanel.Name = "resultPanel";
+            this.resultPanel.Size = new System.Drawing.Size(673, 369);
+            this.resultPanel.TabIndex = 2;
+            this.resultPanel.Visible = false;
             // 
             // panel2
             // 
@@ -78,12 +80,23 @@
             // 
             this.resultView.AllowUserToAddRows = false;
             this.resultView.AllowUserToDeleteRows = false;
+            this.resultView.BackgroundColor = System.Drawing.Color.White;
             this.resultView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.status});
             this.resultView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultView.Location = new System.Drawing.Point(0, 0);
             this.resultView.Name = "resultView";
             this.resultView.Size = new System.Drawing.Size(628, 329);
             this.resultView.TabIndex = 0;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Items.AddRange(new object[] {
+            "Absent",
+            "Present"});
+            this.status.Name = "status";
             // 
             // TakeBtn
             // 
@@ -143,7 +156,7 @@
             this.Load += new System.EventHandler(this.TraineeAttendenceForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.resultPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).EndInit();
             this.ResumeLayout(false);
@@ -154,11 +167,12 @@
         #endregion
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button TakeBtn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel resultPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox courseTrainee;
         private System.Windows.Forms.Label courseSelect;
         private System.Windows.Forms.Button selectBtn;
         private System.Windows.Forms.DataGridView resultView;
+        private System.Windows.Forms.DataGridViewComboBoxColumn status;
     }
 }

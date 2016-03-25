@@ -33,15 +33,16 @@
             this.resultPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.resultView = new System.Windows.Forms.DataGridView();
-            this.srnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tadateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.hrsperdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacheridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacherAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saiYogaDBDataSet = new SaiYogaTraining.SaiYogaDBDataSet();
             this.teacherAttendanceTableAdapter = new SaiYogaTraining.SaiYogaDBDataSetTableAdapters.TeacherAttendanceTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hrsBtn = new System.Windows.Forms.Button();
+            this.srnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tadateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.teacheridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hrs_per_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             this.resultPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.hrsBtn);
             this.mainPanel.Controls.Add(this.resultPanel);
             this.mainPanel.Controls.Add(this.initBtn);
             this.mainPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -65,11 +67,11 @@
             // 
             // initBtn
             // 
-            this.initBtn.Location = new System.Drawing.Point(383, 394);
+            this.initBtn.Location = new System.Drawing.Point(201, 397);
             this.initBtn.Name = "initBtn";
             this.initBtn.Size = new System.Drawing.Size(192, 42);
             this.initBtn.TabIndex = 0;
-            this.initBtn.Text = "Take Today\'s Attendence";
+            this.initBtn.Text = "Take Attendence";
             this.initBtn.UseVisualStyleBackColor = true;
             this.initBtn.Click += new System.EventHandler(this.initBtn_Click);
             // 
@@ -101,14 +103,48 @@
             this.srnoDataGridViewTextBoxColumn,
             this.tadateDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
-            this.hrsperdayDataGridViewTextBoxColumn,
-            this.teacheridDataGridViewTextBoxColumn});
+            this.teacheridDataGridViewTextBoxColumn,
+            this.hrs_per_day});
             this.resultView.DataSource = this.teacherAttendanceBindingSource;
             this.resultView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultView.Location = new System.Drawing.Point(0, 0);
             this.resultView.Name = "resultView";
             this.resultView.Size = new System.Drawing.Size(517, 288);
             this.resultView.TabIndex = 0;
+            // 
+            // teacherAttendanceBindingSource
+            // 
+            this.teacherAttendanceBindingSource.DataMember = "TeacherAttendance";
+            this.teacherAttendanceBindingSource.DataSource = this.saiYogaDBDataSet;
+            // 
+            // saiYogaDBDataSet
+            // 
+            this.saiYogaDBDataSet.DataSetName = "SaiYogaDBDataSet";
+            this.saiYogaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // teacherAttendanceTableAdapter
+            // 
+            this.teacherAttendanceTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SaiYogaTraining.Properties.Resources.file_text_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(800, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // hrsBtn
+            // 
+            this.hrsBtn.Location = new System.Drawing.Point(590, 397);
+            this.hrsBtn.Name = "hrsBtn";
+            this.hrsBtn.Size = new System.Drawing.Size(192, 42);
+            this.hrsBtn.TabIndex = 2;
+            this.hrsBtn.Text = "Add Hours Per Day";
+            this.hrsBtn.UseVisualStyleBackColor = true;
+            this.hrsBtn.Click += new System.EventHandler(this.hrsBtn_Click);
             // 
             // srnoDataGridViewTextBoxColumn
             // 
@@ -135,41 +171,17 @@
             this.statusDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.statusDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // hrsperdayDataGridViewTextBoxColumn
-            // 
-            this.hrsperdayDataGridViewTextBoxColumn.DataPropertyName = "hrs_per_day";
-            this.hrsperdayDataGridViewTextBoxColumn.HeaderText = "Hours Per Day";
-            this.hrsperdayDataGridViewTextBoxColumn.Name = "hrsperdayDataGridViewTextBoxColumn";
-            // 
             // teacheridDataGridViewTextBoxColumn
             // 
             this.teacheridDataGridViewTextBoxColumn.DataPropertyName = "teacher_id";
             this.teacheridDataGridViewTextBoxColumn.HeaderText = "Teacher ID";
             this.teacheridDataGridViewTextBoxColumn.Name = "teacheridDataGridViewTextBoxColumn";
             // 
-            // teacherAttendanceBindingSource
+            // hrs_per_day
             // 
-            this.teacherAttendanceBindingSource.DataMember = "TeacherAttendance";
-            this.teacherAttendanceBindingSource.DataSource = this.saiYogaDBDataSet;
-            // 
-            // saiYogaDBDataSet
-            // 
-            this.saiYogaDBDataSet.DataSetName = "SaiYogaDBDataSet";
-            this.saiYogaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // teacherAttendanceTableAdapter
-            // 
-            this.teacherAttendanceTableAdapter.ClearBeforeFill = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SaiYogaTraining.Properties.Resources.file_text_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(800, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.hrs_per_day.DataPropertyName = "hrs_per_day";
+            this.hrs_per_day.HeaderText = "Hours Per Day";
+            this.hrs_per_day.Name = "hrs_per_day";
             // 
             // TeacherAttendenceForm
             // 
@@ -204,11 +216,12 @@
         private SaiYogaDBDataSet saiYogaDBDataSet;
         private System.Windows.Forms.BindingSource teacherAttendanceBindingSource;
         private SaiYogaDBDataSetTableAdapters.TeacherAttendanceTableAdapter teacherAttendanceTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button hrsBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn srnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tadateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hrsperdayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacheridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hrs_per_day;
     }
 }

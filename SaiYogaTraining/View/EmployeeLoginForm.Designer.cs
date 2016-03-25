@@ -76,9 +76,9 @@
             // admissionbtn
             // 
             this.admissionbtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.admissionbtn.Location = new System.Drawing.Point(47, 41);
+            this.admissionbtn.Location = new System.Drawing.Point(71, 35);
             this.admissionbtn.Name = "admissionbtn";
-            this.admissionbtn.Size = new System.Drawing.Size(320, 46);
+            this.admissionbtn.Size = new System.Drawing.Size(271, 46);
             this.admissionbtn.TabIndex = 3;
             this.admissionbtn.Text = "Admission Page";
             this.admissionbtn.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Location = new System.Drawing.Point(532, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(292, 344);
+            this.panel1.Size = new System.Drawing.Size(292, 351);
             this.panel1.TabIndex = 6;
             // 
             // richTextBox1
@@ -128,15 +128,15 @@
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(84, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(413, 344);
+            this.panel2.Size = new System.Drawing.Size(413, 351);
             this.panel2.TabIndex = 7;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(48, 249);
+            this.button3.Location = new System.Drawing.Point(72, 283);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(320, 46);
+            this.button3.Size = new System.Drawing.Size(271, 46);
             this.button3.TabIndex = 8;
             this.button3.Text = "Manage Attendence";
             this.button3.UseVisualStyleBackColor = true;
@@ -145,9 +145,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(48, 197);
+            this.button2.Location = new System.Drawing.Point(72, 222);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(320, 46);
+            this.button2.Size = new System.Drawing.Size(271, 46);
             this.button2.TabIndex = 7;
             this.button2.Text = "Manage Teacher";
             this.button2.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@
             // traineebtn
             // 
             this.traineebtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traineebtn.Location = new System.Drawing.Point(48, 145);
+            this.traineebtn.Location = new System.Drawing.Point(71, 159);
             this.traineebtn.Name = "traineebtn";
-            this.traineebtn.Size = new System.Drawing.Size(320, 46);
+            this.traineebtn.Size = new System.Drawing.Size(271, 46);
             this.traineebtn.TabIndex = 6;
             this.traineebtn.Text = "Manage Trainee";
             this.traineebtn.UseVisualStyleBackColor = true;
@@ -167,9 +167,9 @@
             // courseBtn
             // 
             this.courseBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseBtn.Location = new System.Drawing.Point(48, 93);
+            this.courseBtn.Location = new System.Drawing.Point(72, 98);
             this.courseBtn.Name = "courseBtn";
-            this.courseBtn.Size = new System.Drawing.Size(320, 46);
+            this.courseBtn.Size = new System.Drawing.Size(271, 46);
             this.courseBtn.TabIndex = 5;
             this.courseBtn.Text = "Manage Course";
             this.courseBtn.UseVisualStyleBackColor = true;

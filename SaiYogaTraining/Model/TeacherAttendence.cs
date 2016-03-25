@@ -35,5 +35,46 @@ namespace SaiYogaTraining.Model
                 CloseConnect();
             }
         }
+
+        public void UpdateAttendence(string status, string sr)
+        {
+            try
+            {
+                var query = @"UPDATE TeacherAttendance SET status=@status WHERE sr_no = @sr";
+                SqlCommand cmd = new SqlCommand(query, GetConnect());
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@sr", sr);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+        public void UpdateHourPerDay(string hrs, string sr)
+        {
+            try
+            {
+                var query = @"UPDATE TeacherAttendance SET hrs_per_day=@hrs WHERE sr_no = @sr";
+                SqlCommand cmd = new SqlCommand(query, GetConnect());
+                cmd.Parameters.AddWithValue("@hrs", hrs);
+                cmd.Parameters.AddWithValue("@sr", sr);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
     }
 }

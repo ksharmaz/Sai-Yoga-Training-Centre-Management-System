@@ -36,43 +36,21 @@ namespace SaiYogaTraining.View
         {
             KeyValuePair<string, string> selectValue = (KeyValuePair<string, string>)courseTrainee.SelectedValue;
             Attendence atd = new Attendence();
-            atd.InitiateAttendence(selectValue.Value, selectValue.Key);
-            //FillCombo();
+            bool trainee = atd.InitiateAttendence(selectValue.Value, selectValue.Key);
             resultView.DataSource = atd.SelectAttendence();
-        }
-        private void FillCombo()
-        {
-            DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
-            combo.HeaderText = "Status";
-            combo.Name = "combo";
-            combo.Items.Add("Absent");
-            combo.Items.Add("Present");
-            //resultView.Columns.Add(combo);
+            if (!trainee)
+                MessageBox.Show("No Trainee for this Course");
+            resultPanel.Visible = true;
         }
 
         private void TakeBtn_Click(object sender, EventArgs e)
         {
-            try
+            this.selectBtn.Enabled = false;
+            for(int i=0; i<resultView.RowCount;i++)
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = Connection.GetConnect();
-                for(int i = 0; i < resultView.Rows.Count; i++)
-                {
-                    var query = @"UPDATE Attendance SET " +
-                    "status=" + resultView.Rows[3].Cells["Status"].Value;
-                    cmd.CommandText = query;
-                    cmd.ExecuteNonQuery();
-                }
+                (new Attendence()).UpdateAttendence(resultView.Rows[i].Cells[0].Value.ToString(),resultView.Rows[i].Cells[1].Value.ToString());
             }
-            catch (Exception exp)
-            {
-
-                throw;
-            }
-            finally
-            {
-                Connection.CloseConnect();
-            }
+            MessageBox.Show("Attendance Record Filled");
         }
     }
 }

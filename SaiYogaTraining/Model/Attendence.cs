@@ -44,7 +44,7 @@ namespace SaiYogaTraining.Model
             try
             {
                 var conn = GetConnect();
-                var query = @"SELECT Attendance.enroll_no 'Enrollment No.', Trainee.tname 'Trainee Name', adate 'Date', status 'Status' " +
+                var query = @"SELECT sr_no 'Serial No.', Attendance.enroll_no 'Enrollment No.', Trainee.tname 'Trainee Name', adate 'Date' " +
                     "FROM Attendance JOIN Trainee ON Attendance.enroll_no=Trainee.enroll_no WHERE adate=@date";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(new SqlParameter("@date", DateTime.Today));
@@ -59,6 +59,27 @@ namespace SaiYogaTraining.Model
 
             }
             catch (Exception e)
+            {
+
+                throw;
+            }
+            finally
+            {
+                CloseConnect();
+            }
+        }
+
+        public void UpdateAttendence(string status, string sr)
+        {
+            try
+            {
+                var query = @"UPDATE Attendance SET status = @status WHERE sr_no = @sr";
+                SqlCommand cmd = new SqlCommand(query, GetConnect());
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@sr", sr);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
             {
 
                 throw;

@@ -20,26 +20,11 @@ namespace SaiYogaTraining.View
 
         private void initBtn_Click(object sender, EventArgs e)
         {
-            try
+            for (int i = 0; i < resultView.RowCount; i++)
             {
-                SqlCommand cmd = new SqlCommand("UPDATE TeacherAttendance SET status=@status, hrs_per_day=@hrs_per_day", Connection.GetConnect());
-                foreach (DataGridViewRow row in resultView.Rows)
-                {
-                    cmd.Parameters.AddWithValue("@status", statusDataGridViewTextBoxColumn.DisplayMember);
-                    cmd.Parameters.AddWithValue("@hrs_per_day", hrsperdayDataGridViewTextBoxColumn.Displayed);
-                    cmd.ExecuteNonQuery();
-                }
-                MessageBox.Show("Records inserted.");
+                (new TeacherAttendence()).UpdateAttendence(resultView.Rows[i].Cells[2].Value.ToString(), resultView.Rows[i].Cells[0].Value.ToString());
             }
-            catch (Exception)
-            {
-                Console.Write("Error Occured");
-            }
-            finally
-            {
-                Connection.CloseConnect();
-            }
-            
+            MessageBox.Show("Attendance Record Filled");
         }
 
         private void TeacherAttendenceForm_Load(object sender, EventArgs e)
@@ -59,6 +44,15 @@ namespace SaiYogaTraining.View
             // TODO: This line of code loads data into the 'saiYogaDBDataSet.TeacherAttendance' table. You can move, or remove it, as needed.
             this.teacherAttendanceTableAdapter.Fill(this.saiYogaDBDataSet.TeacherAttendance);
 
+        }
+
+        private void hrsBtn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < resultView.RowCount; i++)
+            {
+                (new TeacherAttendence()).UpdateHourPerDay(resultView.Rows[i].Cells[4].Value.ToString(), resultView.Rows[i].Cells[0].Value.ToString());
+            }
+            MessageBox.Show("Hours Per Day Added");
         }
     }
 }
