@@ -25,5 +25,15 @@ namespace SaiYogaTraining.View
         {
             (new TeacherEditForm()).Show();
         }
+
+        private void addLogin_Click(object sender, EventArgs e)
+        {
+            (new AddLoginPage()).Show();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            (new TeacherAddForm()).Show();
+        }
     }
 }

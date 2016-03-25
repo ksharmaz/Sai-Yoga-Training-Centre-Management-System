@@ -32,5 +32,10 @@ namespace SaiYogaTraining.View
         {
             (new CheckScheduleForm()).Show();
         }
+
+        private void modifyBtn_Click(object sender, EventArgs e)
+        {
+            (new CourseEditForm()).Show();
+        }
     }
 }

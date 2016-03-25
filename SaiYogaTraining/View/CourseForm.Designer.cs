@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.modifyBtn = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -41,6 +42,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.modifyBtn);
             this.mainPanel.Controls.Add(this.button1);
             this.mainPanel.Controls.Add(this.pictureBox2);
             this.mainPanel.Controls.Add(this.button2);
@@ -66,11 +68,11 @@
             // 
             this.addCourseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addCourseBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCourseBtn.Location = new System.Drawing.Point(89, 258);
+            this.addCourseBtn.Location = new System.Drawing.Point(128, 235);
             this.addCourseBtn.Name = "addCourseBtn";
             this.addCourseBtn.Size = new System.Drawing.Size(155, 38);
             this.addCourseBtn.TabIndex = 3;
-            this.addCourseBtn.Text = "Modify Course";
+            this.addCourseBtn.Text = "Add Course";
             this.addCourseBtn.UseVisualStyleBackColor = true;
             this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
             // 
@@ -78,7 +80,7 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(288, 258);
+            this.button2.Location = new System.Drawing.Point(460, 235);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 38);
             this.button2.TabIndex = 4;
@@ -100,13 +102,25 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(493, 258);
+            this.button1.Location = new System.Drawing.Point(460, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 38);
             this.button1.TabIndex = 6;
             this.button1.Text = "Check Schedule";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // modifyBtn
+            // 
+            this.modifyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifyBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifyBtn.Location = new System.Drawing.Point(128, 289);
+            this.modifyBtn.Name = "modifyBtn";
+            this.modifyBtn.Size = new System.Drawing.Size(155, 38);
+            this.modifyBtn.TabIndex = 7;
+            this.modifyBtn.Text = "Modify Course";
+            this.modifyBtn.UseVisualStyleBackColor = true;
+            this.modifyBtn.Click += new System.EventHandler(this.modifyBtn_Click);
             // 
             // CourseForm
             // 
@@ -136,5 +150,6 @@
         private System.Windows.Forms.Button addCourseBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button modifyBtn;
     }
 }

@@ -31,12 +31,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.addLogin = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.addLogin);
+            this.mainPanel.Controls.Add(this.addBtn);
             this.mainPanel.Controls.Add(this.button2);
             this.mainPanel.Controls.Add(this.button1);
             this.mainPanel.Controls.Add(this.pictureBox1);
@@ -59,9 +63,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(162, 230);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(164, 257);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 40);
+            this.button1.Size = new System.Drawing.Size(131, 40);
             this.button1.TabIndex = 1;
             this.button1.Text = "Pay Salary";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,13 +75,39 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(558, 230);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(558, 257);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 40);
+            this.button2.Size = new System.Drawing.Size(166, 40);
             this.button2.TabIndex = 2;
             this.button2.Text = "Manage Teacher";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(558, 211);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(166, 40);
+            this.addBtn.TabIndex = 3;
+            this.addBtn.Text = "Add Teacher";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // addLogin
+            // 
+            this.addLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addLogin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addLogin.Location = new System.Drawing.Point(164, 211);
+            this.addLogin.Name = "addLogin";
+            this.addLogin.Size = new System.Drawing.Size(131, 40);
+            this.addLogin.TabIndex = 4;
+            this.addLogin.Text = "Add Login";
+            this.addLogin.UseVisualStyleBackColor = true;
+            this.addLogin.Click += new System.EventHandler(this.addLogin_Click);
             // 
             // TeacherPageForm
             // 
@@ -96,5 +128,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button addLogin;
     }
 }
