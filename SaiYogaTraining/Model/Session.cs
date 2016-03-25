@@ -8,7 +8,7 @@ namespace SaiYogaTraining.Model
 {
     class Session : Connection
     {
-        public string SessionID { get; }
+        public string SessionID;
         private bool flag;
 
         public Session(string loginID)
@@ -18,11 +18,11 @@ namespace SaiYogaTraining.Model
                 if (loginID != null)
                 {
                     var conn = GetConnect();
-                    string query = "INSERT INTO Session (emp_id) VALUES (@loginID)";
+                    string query = "INSERT INTO Session (loginid) VALUES (@loginID)";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.Add(new SqlParameter("@loginID", loginID));
                     int num = cmd.ExecuteNonQuery();
-                    query = "SELECT sid FROM Session WHERE emp_id = @loginID";
+                    query = "SELECT sid FROM Session WHERE loginid = @loginID";
                     cmd = new SqlCommand(query, conn);
                     cmd.Parameters.Add(new SqlParameter("@loginID", loginID));
                     SqlDataReader rdr = cmd.ExecuteReader();

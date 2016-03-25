@@ -69,7 +69,6 @@
     <Compile Include="Model\Attendence.cs" />
     <Compile Include="Model\Connection.cs" />
     <Compile Include="Model\Course.cs" />
-    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Fee.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Salary.cs" />
@@ -85,17 +84,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SaiYogaDBDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\AddLoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddLoginPage.Designer.cs">
+      <DependentUpon>AddLoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AddScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AddScheduleForm.Designer.cs">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AdministratorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AdministratorForm.Designer.cs">
-      <DependentUpon>AdministratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdmissionForm.cs">
       <SubType>Form</SubType>
@@ -205,6 +204,9 @@
     <Compile Include="View\_Partials\PopupForm.Designer.cs">
       <DependentUpon>PopupForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddLoginPage.resx">
+      <DependentUpon>AddLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,9 +250,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\AdministratorForm.resx">
-      <DependentUpon>AdministratorForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\AdmissionForm.resx">
       <DependentUpon>AdmissionForm.cs</DependentUpon>
     </EmbeddedResource>

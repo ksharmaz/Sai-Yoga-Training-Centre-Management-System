@@ -61,10 +61,10 @@
             this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.panel1);
             this.mainPanel.Controls.Add(this.panel2);
-            this.mainPanel.Controls.SetChildIndex(this.label1, 0);
             this.mainPanel.Controls.SetChildIndex(this.panel2, 0);
             this.mainPanel.Controls.SetChildIndex(this.panel1, 0);
             this.mainPanel.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.mainPanel.Controls.SetChildIndex(this.label1, 0);
             this.mainPanel.Controls.SetChildIndex(this.button1, 0);
             this.mainPanel.Controls.SetChildIndex(this.uname, 0);
             // 
@@ -83,8 +83,6 @@
             this.admissionbtn.Text = "Admission Page";
             this.admissionbtn.UseVisualStyleBackColor = true;
             this.admissionbtn.Click += new System.EventHandler(this.admissionbtn_Click);
-            this.admissionbtn.MouseLeave += new System.EventHandler(this.admissionbtn_MouseLeave);
-            this.admissionbtn.MouseHover += new System.EventHandler(this.admissionbtn_MouseHover);
             // 
             // pictureBox1
             // 

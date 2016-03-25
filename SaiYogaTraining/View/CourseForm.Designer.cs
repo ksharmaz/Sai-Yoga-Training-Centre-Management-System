@@ -46,7 +46,6 @@
             this.mainPanel.Controls.Add(this.button2);
             this.mainPanel.Controls.Add(this.addCourseBtn);
             this.mainPanel.Size = new System.Drawing.Size(818, 469);
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // banner
             // 
@@ -118,7 +117,6 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CourseForm";
             this.Text = "Sai Yoga Training Centre - Courses";
-            this.Load += new System.EventHandler(this.Course_Load);
             this.Controls.SetChildIndex(this.banner, 0);
             this.Controls.SetChildIndex(this.mainPanel, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);

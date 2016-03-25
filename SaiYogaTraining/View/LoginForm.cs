@@ -24,19 +24,14 @@ namespace SaiYogaTraining.View
         private void loginbtn_Click(object sender, EventArgs e)
         {
             Login log = new Login();
-            bool isLogin = log.ValidateLogin(usrtxt.Text, passwdtxt.Text, GetRadioName());
+            bool isLogin = log.ValidateLogin(usrtxt.Text, passwdtxt.Text);
             if (isLogin)
             {
                 s1 = new Session(log.loginID);
                 if (s1.hasSession())
                 {
-                    if (log.loginType.Equals("administrator"))
-                        CreateNewForm(OpenAdminForm);
-                    else if (log.loginType.Equals("employee"))
-                    {
-                            CreateNewForm(OpenEmployForm);
-                    }
-                        
+                    this.Close();
+                    CreateNewForm(OpenEmployForm);
                 }
                 else
                 {
@@ -50,11 +45,6 @@ namespace SaiYogaTraining.View
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("TODO: Show Change Password Form");
-        }
-
         #region Private Helper Methods
 
         private void CreateNewForm(ThreadStart formName)
@@ -65,25 +55,12 @@ namespace SaiYogaTraining.View
             th.Start();
         }
 
-        private void OpenAdminForm()
-        {
-            var admin = new AdministratorForm();
-            admin.s1 = s1;
-            Application.Run(admin);
-        }
-
         private void OpenEmployForm()
         {
             var employ = new EmployeeLoginForm();
             employ.s1 = s1;
             Application.Run(employ);
         }
-
-        private string GetRadioName()
-        {
-            return typegrp.Controls.OfType<RadioButton>().SingleOrDefault(rad => rad.Checked == true).Text;
-        }
-
         #endregion
     }
 }

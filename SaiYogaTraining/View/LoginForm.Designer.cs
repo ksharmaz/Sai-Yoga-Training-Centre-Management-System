@@ -34,13 +34,9 @@
             this.passwdlbl = new System.Windows.Forms.Label();
             this.usrtxt = new System.Windows.Forms.TextBox();
             this.passwdtxt = new System.Windows.Forms.TextBox();
-            this.typegrp = new System.Windows.Forms.GroupBox();
             this.loginbtn = new System.Windows.Forms.Button();
-            this.employ = new System.Windows.Forms.RadioButton();
-            this.admin = new System.Windows.Forms.RadioButton();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.typegrp.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -52,7 +48,6 @@
             this.mainPanel.Controls.Add(this.usrlbl);
             this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.typegrp);
             this.mainPanel.Location = new System.Drawing.Point(-16, 135);
             this.mainPanel.Size = new System.Drawing.Size(1104, 563);
             // 
@@ -103,71 +98,34 @@
             // usrtxt
             // 
             this.usrtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usrtxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usrtxt.Location = new System.Drawing.Point(304, 130);
+            this.usrtxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usrtxt.Location = new System.Drawing.Point(308, 126);
             this.usrtxt.Name = "usrtxt";
-            this.usrtxt.Size = new System.Drawing.Size(211, 25);
+            this.usrtxt.Size = new System.Drawing.Size(211, 27);
             this.usrtxt.TabIndex = 4;
             // 
             // passwdtxt
             // 
             this.passwdtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwdtxt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwdtxt.Location = new System.Drawing.Point(304, 211);
+            this.passwdtxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwdtxt.Location = new System.Drawing.Point(308, 207);
             this.passwdtxt.Name = "passwdtxt";
             this.passwdtxt.PasswordChar = '●';
-            this.passwdtxt.Size = new System.Drawing.Size(211, 25);
+            this.passwdtxt.Size = new System.Drawing.Size(211, 27);
             this.passwdtxt.TabIndex = 5;
             this.passwdtxt.UseSystemPasswordChar = true;
-            // 
-            // typegrp
-            // 
-            this.typegrp.Controls.Add(this.employ);
-            this.typegrp.Controls.Add(this.admin);
-            this.typegrp.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typegrp.Location = new System.Drawing.Point(985, 432);
-            this.typegrp.Name = "typegrp";
-            this.typegrp.Size = new System.Drawing.Size(392, 119);
-            this.typegrp.TabIndex = 6;
-            this.typegrp.TabStop = false;
-            this.typegrp.Text = "Login As";
-            this.typegrp.Visible = false;
             // 
             // loginbtn
             // 
             this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginbtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginbtn.Location = new System.Drawing.Point(304, 298);
+            this.loginbtn.Location = new System.Drawing.Point(353, 298);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(100, 37);
             this.loginbtn.TabIndex = 7;
             this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = true;
             this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
-            // 
-            // employ
-            // 
-            this.employ.AutoSize = true;
-            this.employ.Checked = true;
-            this.employ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employ.Location = new System.Drawing.Point(224, 51);
-            this.employ.Name = "employ";
-            this.employ.Size = new System.Drawing.Size(120, 34);
-            this.employ.TabIndex = 1;
-            this.employ.TabStop = true;
-            this.employ.Text = "employee";
-            this.employ.UseVisualStyleBackColor = true;
-            // 
-            // admin
-            // 
-            this.admin.AutoSize = true;
-            this.admin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.admin.Location = new System.Drawing.Point(36, 51);
-            this.admin.Name = "admin";
-            this.admin.Size = new System.Drawing.Size(153, 34);
-            this.admin.TabIndex = 0;
-            this.admin.Text = "administrator";
-            this.admin.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
@@ -179,8 +137,6 @@
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.typegrp.ResumeLayout(false);
-            this.typegrp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,9 +150,6 @@
         private System.Windows.Forms.TextBox passwdtxt;
         private System.Windows.Forms.TextBox usrtxt;
         private System.Windows.Forms.Label passwdlbl;
-        private System.Windows.Forms.GroupBox typegrp;
-        private System.Windows.Forms.RadioButton employ;
-        private System.Windows.Forms.RadioButton admin;
         private System.Windows.Forms.Button loginbtn;
     }
 }
