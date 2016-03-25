@@ -11,28 +11,29 @@ using SaiYogaTraining.View._Partials;
 
 namespace SaiYogaTraining.View
 {
-    public partial class TeacherForm : DetailForm
+    public partial class TeacherEditForm : DetailForm
     {
         Teacher teacher;
         private string tID;
 
-        public TeacherForm()
+        public TeacherEditForm()
         {
             InitializeComponent();
         }
 
-        private void TeacherForm_Load(object sender, EventArgs e)
+        private void TeacherEditForm_Load(object sender, EventArgs e)
         {
             this.qualificationList.SelectedIndex = 0;
             teacher = new Teacher();
-            var tlist = teacher.ListAll();
-            if (tlist.Count > 0)
+            var dict = teacher.ListAll();
+            if(dict.Count == 0)
             {
-                foreach(var item in tlist)
-                {
-                    teacherIDList.Items.Add(item.Key);
-                }
+                MessageBox.Show("No Teacher to Manage");
+                this.Close();
             }
+            teachertxt.DataSource = new BindingSource(dict, null);
+            teachertxt.ValueMember = "Key";
+            teachertxt.DisplayMember = "Value";
         }
 
         private void FillData()
@@ -52,17 +53,6 @@ namespace SaiYogaTraining.View
             tID = teacher.TeacherID;
         }
 
-        private void addTeacher_Click(object sender, EventArgs e)
-        {
-            teacher = new Teacher();
-            FillData();
-            if (teacher.Insert())
-            {
-                MessageBox.Show("Data Inserted");
-            }
-            tID = teacher.TeacherID;
-        }
-
         private void editbtn_Click(object sender, EventArgs e)
         {
             teacher = new Teacher();
@@ -77,9 +67,13 @@ namespace SaiYogaTraining.View
                 MessageBox.Show("Delete Successful");
         }
 
-        private void teacherIDList_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            teacher.GetTeacher(teacherIDList.SelectedItem.ToString());
+        private void teachertxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KeyValuePair<int, string> selectValue = (KeyValuePair<int, string>)teachertxt.SelectedItem;
+            tID = selectValue.Key.ToString();
+            teacherIDList.Text = tID;
+            teacher = new Teacher();
+            teacher.GetTeacher(tID);
             FillFormData();
         }
     }

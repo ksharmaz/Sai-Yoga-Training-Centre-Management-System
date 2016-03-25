@@ -23,7 +23,7 @@ namespace SaiYogaTraining.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (new TeacherForm()).Show();
+            (new TeacherEditForm()).Show();
         }
     }
 }

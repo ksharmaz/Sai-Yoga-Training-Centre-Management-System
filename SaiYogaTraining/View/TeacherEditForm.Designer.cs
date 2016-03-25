@@ -1,6 +1,6 @@
 ﻿namespace SaiYogaTraining.View
 {
-    partial class TeacherForm
+    partial class TeacherEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.teacherIDList = new System.Windows.Forms.ComboBox();
+            this.teachertxt = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.qualificationList = new System.Windows.Forms.ComboBox();
-            this.addTeacher = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.teacherIDList = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -46,10 +46,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.addTeacher);
+            this.panel2.Controls.Add(this.teacherIDList);
             this.panel2.Controls.Add(this.qualificationList);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.teacherIDList);
+            this.panel2.Controls.Add(this.teachertxt);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.SetChildIndex(this.label2, 0);
             this.panel2.Controls.SetChildIndex(this.nametxt, 0);
@@ -61,10 +61,10 @@
             this.panel2.Controls.SetChildIndex(this.delbtn, 0);
             this.panel2.Controls.SetChildIndex(this.addresstxt, 0);
             this.panel2.Controls.SetChildIndex(this.label6, 0);
-            this.panel2.Controls.SetChildIndex(this.teacherIDList, 0);
+            this.panel2.Controls.SetChildIndex(this.teachertxt, 0);
             this.panel2.Controls.SetChildIndex(this.label7, 0);
             this.panel2.Controls.SetChildIndex(this.qualificationList, 0);
-            this.panel2.Controls.SetChildIndex(this.addTeacher, 0);
+            this.panel2.Controls.SetChildIndex(this.teacherIDList, 0);
             // 
             // delbtn
             // 
@@ -119,22 +119,22 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(138, 65);
+            this.label6.Location = new System.Drawing.Point(125, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Teacher ID";
+            this.label6.Text = "Search Teacher";
             // 
-            // teacherIDList
+            // teachertxt
             // 
-            this.teacherIDList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.teacherIDList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.teacherIDList.FormattingEnabled = true;
-            this.teacherIDList.Location = new System.Drawing.Point(225, 62);
-            this.teacherIDList.Name = "teacherIDList";
-            this.teacherIDList.Size = new System.Drawing.Size(416, 28);
-            this.teacherIDList.TabIndex = 12;
-            this.teacherIDList.SelectedIndexChanged += new System.EventHandler(this.teacherIDList_SelectedIndexChanged);
+            this.teachertxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.teachertxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.teachertxt.FormattingEnabled = true;
+            this.teachertxt.Location = new System.Drawing.Point(243, 62);
+            this.teachertxt.Name = "teachertxt";
+            this.teachertxt.Size = new System.Drawing.Size(256, 28);
+            this.teachertxt.TabIndex = 12;
+            this.teachertxt.SelectedIndexChanged += new System.EventHandler(this.teachertxt_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -174,16 +174,6 @@
             this.qualificationList.Size = new System.Drawing.Size(401, 28);
             this.qualificationList.TabIndex = 14;
             // 
-            // addTeacher
-            // 
-            this.addTeacher.Location = new System.Drawing.Point(332, 376);
-            this.addTeacher.Name = "addTeacher";
-            this.addTeacher.Size = new System.Drawing.Size(104, 30);
-            this.addTeacher.TabIndex = 15;
-            this.addTeacher.Text = "Add Teacher";
-            this.addTeacher.UseVisualStyleBackColor = true;
-            this.addTeacher.Click += new System.EventHandler(this.addTeacher_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SaiYogaTraining.Properties.Resources.user_female_alt_icon;
@@ -194,15 +184,23 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // TeacherForm
+            // teacherIDList
+            // 
+            this.teacherIDList.Enabled = false;
+            this.teacherIDList.Location = new System.Drawing.Point(529, 62);
+            this.teacherIDList.Name = "teacherIDList";
+            this.teacherIDList.Size = new System.Drawing.Size(112, 27);
+            this.teacherIDList.TabIndex = 15;
+            // 
+            // TeacherEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 661);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "TeacherForm";
+            this.Name = "TeacherEditForm";
             this.Text = "Sai Yoga Training - Manage Teacher";
-            this.Load += new System.EventHandler(this.TeacherForm_Load);
+            this.Load += new System.EventHandler(this.TeacherEditForm_Load);
             this.Controls.SetChildIndex(this.banner, 0);
             this.Controls.SetChildIndex(this.mainPanel, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
@@ -219,11 +217,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox teacherIDList;
+        private System.Windows.Forms.ComboBox teachertxt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button addTeacher;
         private System.Windows.Forms.ComboBox qualificationList;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox teacherIDList;
     }
 }

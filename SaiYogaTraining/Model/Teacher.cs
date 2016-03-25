@@ -126,7 +126,7 @@ namespace SaiYogaTraining.Model
             }
         }
 
-        public Teacher GetTeacher(string id)
+        public void GetTeacher(string id)
         {
             try
             {
@@ -143,8 +143,6 @@ namespace SaiYogaTraining.Model
                     this.Phone = rdr["tphone"].ToString();
                     this.Qualification = rdr["tqualification"].ToString();
                 }
-
-                return this;
             }
             catch (Exception e)
             {

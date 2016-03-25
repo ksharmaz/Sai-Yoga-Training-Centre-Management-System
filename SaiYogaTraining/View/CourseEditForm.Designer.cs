@@ -1,6 +1,6 @@
 ﻿namespace SaiYogaTraining.View
 {
-    partial class CourseAddForm
+    partial class CourseEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.courseID = new System.Windows.Forms.TextBox();
+            this.coursetxt = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.delbtn = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
             this.courseFee = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.courseBenefits = new System.Windows.Forms.RichTextBox();
@@ -40,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.courseName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.submitbtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,8 +58,8 @@
             // 
             // banner
             // 
-            this.banner.Size = new System.Drawing.Size(360, 72);
-            this.banner.Text = "Add Course";
+            this.banner.Size = new System.Drawing.Size(468, 72);
+            this.banner.Text = "Manage Course";
             // 
             // panel1
             // 
@@ -69,6 +73,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.courseID);
+            this.panel2.Controls.Add(this.coursetxt);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.delbtn);
+            this.panel2.Controls.Add(this.updatebtn);
             this.panel2.Controls.Add(this.courseFee);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.courseBenefits);
@@ -79,16 +88,64 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.courseName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.submitbtn);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(22, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(662, 426);
             this.panel2.TabIndex = 1;
             // 
+            // courseID
+            // 
+            this.courseID.Enabled = false;
+            this.courseID.Location = new System.Drawing.Point(433, 23);
+            this.courseID.Name = "courseID";
+            this.courseID.Size = new System.Drawing.Size(71, 27);
+            this.courseID.TabIndex = 15;
+            // 
+            // coursetxt
+            // 
+            this.coursetxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.coursetxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.coursetxt.FormattingEnabled = true;
+            this.coursetxt.Location = new System.Drawing.Point(273, 23);
+            this.coursetxt.Name = "coursetxt";
+            this.coursetxt.Size = new System.Drawing.Size(139, 28);
+            this.coursetxt.TabIndex = 14;
+            this.coursetxt.SelectedIndexChanged += new System.EventHandler(this.coursetxt_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(151, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Search Course";
+            // 
+            // delbtn
+            // 
+            this.delbtn.Location = new System.Drawing.Point(403, 365);
+            this.delbtn.Name = "delbtn";
+            this.delbtn.Size = new System.Drawing.Size(101, 32);
+            this.delbtn.TabIndex = 12;
+            this.delbtn.Text = "Delete Course";
+            this.delbtn.UseVisualStyleBackColor = true;
+            this.delbtn.Click += new System.EventHandler(this.delbtn_Click);
+            // 
+            // updatebtn
+            // 
+            this.updatebtn.Location = new System.Drawing.Point(161, 365);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(101, 32);
+            this.updatebtn.TabIndex = 11;
+            this.updatebtn.Text = "Update Course";
+            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
+            // 
             // courseFee
             // 
-            this.courseFee.Location = new System.Drawing.Point(279, 274);
+            this.courseFee.Location = new System.Drawing.Point(273, 307);
             this.courseFee.Name = "courseFee";
             this.courseFee.Size = new System.Drawing.Size(231, 27);
             this.courseFee.TabIndex = 10;
@@ -97,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(162, 277);
+            this.label5.Location = new System.Drawing.Point(156, 310);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 9;
@@ -105,7 +162,7 @@
             // 
             // courseBenefits
             // 
-            this.courseBenefits.Location = new System.Drawing.Point(279, 209);
+            this.courseBenefits.Location = new System.Drawing.Point(273, 242);
             this.courseBenefits.Name = "courseBenefits";
             this.courseBenefits.Size = new System.Drawing.Size(231, 47);
             this.courseBenefits.TabIndex = 8;
@@ -115,7 +172,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(162, 209);
+            this.label4.Location = new System.Drawing.Point(156, 242);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 7;
@@ -131,7 +188,7 @@
             "Restoration",
             "Physical Practice",
             "Hybrid"});
-            this.courseType.Location = new System.Drawing.Point(279, 153);
+            this.courseType.Location = new System.Drawing.Point(273, 186);
             this.courseType.Name = "courseType";
             this.courseType.Size = new System.Drawing.Size(231, 28);
             this.courseType.TabIndex = 6;
@@ -140,7 +197,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(162, 153);
+            this.label3.Location = new System.Drawing.Point(156, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 5;
@@ -160,7 +217,7 @@
             "18 Months",
             "2 Years",
             "3 Years"});
-            this.courseDuration.Location = new System.Drawing.Point(279, 96);
+            this.courseDuration.Location = new System.Drawing.Point(273, 129);
             this.courseDuration.Name = "courseDuration";
             this.courseDuration.Size = new System.Drawing.Size(231, 28);
             this.courseDuration.TabIndex = 4;
@@ -169,7 +226,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 96);
+            this.label2.Location = new System.Drawing.Point(156, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 3;
@@ -177,7 +234,7 @@
             // 
             // courseName
             // 
-            this.courseName.Location = new System.Drawing.Point(279, 41);
+            this.courseName.Location = new System.Drawing.Point(273, 74);
             this.courseName.Name = "courseName";
             this.courseName.Size = new System.Drawing.Size(231, 27);
             this.courseName.TabIndex = 2;
@@ -186,21 +243,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 44);
+            this.label1.Location = new System.Drawing.Point(156, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Course Name";
-            // 
-            // submitbtn
-            // 
-            this.submitbtn.Location = new System.Drawing.Point(291, 365);
-            this.submitbtn.Name = "submitbtn";
-            this.submitbtn.Size = new System.Drawing.Size(101, 32);
-            this.submitbtn.TabIndex = 0;
-            this.submitbtn.Text = "Add Course";
-            this.submitbtn.UseVisualStyleBackColor = true;
-            this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
             // pictureBox1
             // 
@@ -212,13 +259,13 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // CourseAddForm
+            // CourseEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 640);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "CourseAddForm";
+            this.Name = "CourseEditForm";
             this.Text = "Sai Yoga Training - Manage Course";
             this.Load += new System.EventHandler(this.CourseAddForm_Load);
             this.Controls.SetChildIndex(this.banner, 0);
@@ -238,7 +285,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button submitbtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox courseName;
         private System.Windows.Forms.Label label2;
@@ -249,6 +295,11 @@
         private System.Windows.Forms.RichTextBox courseBenefits;
         private System.Windows.Forms.TextBox courseFee;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.Button delbtn;
+        private System.Windows.Forms.ComboBox coursetxt;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox courseID;
     }
 }

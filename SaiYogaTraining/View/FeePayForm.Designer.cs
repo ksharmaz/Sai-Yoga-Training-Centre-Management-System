@@ -118,24 +118,24 @@
             // 
             // balancetxt
             // 
-            this.balancetxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.balancetxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.balancetxt.Enabled = false;
             this.balancetxt.Location = new System.Drawing.Point(218, 72);
             this.balancetxt.Name = "balancetxt";
-            this.balancetxt.Size = new System.Drawing.Size(274, 20);
+            this.balancetxt.Size = new System.Drawing.Size(274, 27);
             this.balancetxt.TabIndex = 6;
             // 
             // amttxt
             // 
-            this.amttxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.amttxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.amttxt.Location = new System.Drawing.Point(218, 117);
             this.amttxt.Name = "amttxt";
-            this.amttxt.Size = new System.Drawing.Size(274, 20);
+            this.amttxt.Size = new System.Drawing.Size(274, 27);
             this.amttxt.TabIndex = 7;
             // 
             // remarkstxt
             // 
-            this.remarkstxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.remarkstxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.remarkstxt.Location = new System.Drawing.Point(218, 252);
             this.remarkstxt.Name = "remarkstxt";
             this.remarkstxt.Size = new System.Drawing.Size(274, 59);

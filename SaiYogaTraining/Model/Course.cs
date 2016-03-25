@@ -211,7 +211,7 @@ namespace SaiYogaTraining.Model
             try
             {
                 Dictionary<int, string> dict = new Dictionary<int, string>();
-                var conn = GetConnect();
+                var conn = Connection.GetConnect();
                 var query = @"SELECT course_id, course_name FROM COURSE";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -227,6 +227,10 @@ namespace SaiYogaTraining.Model
             {
                 Console.WriteLine(e.Message);
                 throw;
+            }
+            finally
+            {
+                CloseConnect();
             }
         }
 
