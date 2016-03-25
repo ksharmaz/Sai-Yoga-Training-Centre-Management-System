@@ -26,7 +26,7 @@ namespace SaiYogaTraining.View
             FillData(crs);
             bool insert = crs.AddCourse();
             if (insert)
-                MessageBox.Show("Data Inserted");
+                MessageBox.Show("Course Added Successfully", "Course Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CourseAddForm_Load(object sender, EventArgs e)

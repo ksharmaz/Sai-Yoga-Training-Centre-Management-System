@@ -71,7 +71,7 @@ namespace SaiYogaTraining.View
                     if (tn.Delete(tn.ID))
                         MessageBox.Show("Trainee delete successful", "Delete Action", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("Something went wrong!!");
+                        MessageBox.Show("Something went wrong!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case DialogResult.Cancel:
                     break;
@@ -91,7 +91,7 @@ namespace SaiYogaTraining.View
         {
             FillFormData();
             if (tn.Update(tn.ID))
-                MessageBox.Show("Update Success");
+                MessageBox.Show("Update Successful", "Trainee Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void feebtn_Click(object sender, EventArgs e)

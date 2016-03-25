@@ -40,7 +40,7 @@ namespace SaiYogaTraining.View
             FillData();
             if (teacher.Insert())
             {
-                MessageBox.Show("Teacher Added");
+                MessageBox.Show("Teacher Added Successfully", "Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             tID = teacher.TeacherID;

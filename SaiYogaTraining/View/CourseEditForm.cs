@@ -39,10 +39,10 @@ namespace SaiYogaTraining.View
                 crs = new crs();
                 FillData(crs);
                 if(crs.UpdateCourse(cID))
-                MessageBox.Show("Data Update Successfully");
+                MessageBox.Show("Data Updated Successfully", "Course Information",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Select data to update");
+                MessageBox.Show("Select data to update", "Course Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }
 
@@ -71,7 +71,7 @@ namespace SaiYogaTraining.View
             crs = new crs();
             if (crs.Delete(cID))
             {
-                MessageBox.Show("Data Deleted");
+                MessageBox.Show("Data Deleted Successfully", "Course Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

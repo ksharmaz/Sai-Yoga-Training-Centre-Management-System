@@ -39,7 +39,7 @@ namespace SaiYogaTraining.View
             bool trainee = atd.InitiateAttendence(selectValue.Value, selectValue.Key);
             resultView.DataSource = atd.SelectAttendence();
             if (!trainee)
-                MessageBox.Show("No Trainee for this Course");
+                MessageBox.Show("No Trainee for this Course", "Trainee Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             resultPanel.Visible = true;
         }
 
@@ -50,7 +50,7 @@ namespace SaiYogaTraining.View
             {
                 (new Attendence()).UpdateAttendence(resultView.Rows[i].Cells[0].Value.ToString(),resultView.Rows[i].Cells[1].Value.ToString());
             }
-            MessageBox.Show("Attendance Record Filled");
+            MessageBox.Show("Attendance Record Filled", "Trainee Attendence Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

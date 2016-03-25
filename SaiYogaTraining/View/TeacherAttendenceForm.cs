@@ -24,7 +24,7 @@ namespace SaiYogaTraining.View
             {
                 (new TeacherAttendence()).UpdateAttendence(resultView.Rows[i].Cells[2].Value.ToString(), resultView.Rows[i].Cells[0].Value.ToString());
             }
-            MessageBox.Show("Attendance Record Filled");
+            MessageBox.Show("Attendance Record Filled", "Attendence Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TeacherAttendenceForm_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace SaiYogaTraining.View
             }
             else
             {
-                MessageBox.Show("Something, Went Wrong!!");
+                MessageBox.Show("Something, Went Wrong!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             // TODO: This line of code loads data into the 'saiYogaDBDataSet.TeacherAttendance' table. You can move, or remove it, as needed.
@@ -52,7 +52,7 @@ namespace SaiYogaTraining.View
             {
                 (new TeacherAttendence()).UpdateHourPerDay(resultView.Rows[i].Cells[4].Value.ToString(), resultView.Rows[i].Cells[0].Value.ToString());
             }
-            MessageBox.Show("Hours Per Day Added");
+            MessageBox.Show("Hours Per Day Added","Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -72,9 +72,9 @@ namespace SaiYogaTraining.View
             slr.TeacherID = idtxt.Text.ToString().Trim();
 
             if (slr.Insert())
-                MessageBox.Show("Data Inserted");
+                MessageBox.Show("Salary Data Added", "Salary Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Something went wrong");
+                MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             this.Close();
         }
 

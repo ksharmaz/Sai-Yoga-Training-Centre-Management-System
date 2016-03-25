@@ -29,7 +29,7 @@ namespace SaiYogaTraining.View
         {
             if (string.IsNullOrEmpty(id))
             {
-                MessageBox.Show("Something went wrong!");
+                MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             typetxt.SelectedIndex = 0;
@@ -41,7 +41,7 @@ namespace SaiYogaTraining.View
                 balancetxt.Text = fee.CheckLastBalance(id).ToString();
                 lastBal = int.Parse(balancetxt.Text);
                 if (lastBal == 0)
-                    MessageBox.Show("No Fee Remaining");
+                    MessageBox.Show("No Fee Remaining", "Fee Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else if (lastBal == -1)
                 {
                     MessageBox.Show("Something went wrong!");
@@ -73,7 +73,7 @@ namespace SaiYogaTraining.View
                 FillData();
                 if (fee.insert())
                 {
-                    MessageBox.Show("Fee Paid");
+                    MessageBox.Show("Fee Paid","Fee Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DisableAll();
                 }    
             }
@@ -98,7 +98,7 @@ namespace SaiYogaTraining.View
             {
                 FileStream fs = new FileStream(dialog.FileName, FileMode.Create);
                 fee.GeneratePDF(fs);
-                MessageBox.Show("PDF Generated");
+                MessageBox.Show("PDF Generated", "Fee Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

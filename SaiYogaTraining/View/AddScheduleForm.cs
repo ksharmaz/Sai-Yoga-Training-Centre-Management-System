@@ -33,7 +33,7 @@ namespace SaiYogaTraining.View
             }
             else
             {
-                MessageBox.Show("No Course Available");
+                MessageBox.Show("No Course Available", "Course Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             dict = (new Teacher()).ListAll();
@@ -46,7 +46,7 @@ namespace SaiYogaTraining.View
             }
             else
             {
-                MessageBox.Show("No Teacher Available");
+                MessageBox.Show("No Teacher Available", "Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -64,9 +64,9 @@ namespace SaiYogaTraining.View
             sdle.TeacherID = this.teacherSelect.SelectedValue.ToString();
 
             if (sdle.AddSchedule())
-                MessageBox.Show("Schedule Added");
+                MessageBox.Show("Schedule Added", "Schedule Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Something went wrong!");
+                MessageBox.Show("Something went wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             this.Close();
         }

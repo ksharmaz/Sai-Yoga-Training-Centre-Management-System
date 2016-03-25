@@ -56,7 +56,7 @@ namespace SaiYogaTraining.View
             string str = tn.Insert();
             if (!string.IsNullOrEmpty(str))
             {
-                MessageBox.Show("Data Inserted");
+                MessageBox.Show("Data Inserted Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FeePayForm fee = new FeePayForm();
                 fee.id = str;
                 fee.formtype = "admission";

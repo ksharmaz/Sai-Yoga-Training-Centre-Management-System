@@ -28,7 +28,7 @@ namespace SaiYogaTraining.View
             var dict = teacher.ListAll();
             if(dict.Count == 0)
             {
-                MessageBox.Show("No Teacher to Manage");
+                MessageBox.Show("No Teacher to Manage", "Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             teachertxt.DataSource = new BindingSource(dict, null);
@@ -58,13 +58,13 @@ namespace SaiYogaTraining.View
             teacher = new Teacher();
             FillData();
             if (teacher.Update(tID))
-                MessageBox.Show("Data Updated");
+                MessageBox.Show("Teacher Updated Successfully", "Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void delbtn_Click(object sender, EventArgs e)
         {
             if (teacher.Delete(tID))
-                MessageBox.Show("Delete Successful");
+                MessageBox.Show("Delete Successful", "Teacher Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void teachertxt_SelectedIndexChanged(object sender, EventArgs e)
